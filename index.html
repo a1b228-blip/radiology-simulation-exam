@@ -698,6 +698,136 @@
             color: #78350F;
         }
 
+        
+        /* Interactive TRM Tool Box */
+        .interactive-tool-box {
+            cursor: pointer;
+            position: relative;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .interactive-tool-box:hover {
+            transform: translateY(-4px);
+            border-color: #0D9488;
+            box-shadow: 0 10px 22px rgba(13, 148, 136, 0.15);
+            background: #F0FDFA;
+        }
+
+        .tool-click-hint {
+            margin-top: 12px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #0D9488;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* TRM Modal Overlay & Box */
+        .trm-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .trm-modal-overlay.active {
+            display: flex;
+        }
+
+        .trm-modal-container {
+            background: #FFFFFF;
+            border-radius: 18px;
+            max-width: 820px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            position: relative;
+            padding: 34px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .trm-modal-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            background: #F1F5F9;
+            color: #64748B;
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .trm-modal-close:hover {
+            background: #DC2626;
+            color: #FFFFFF;
+        }
+
+        .modal-tool-header {
+            margin-bottom: 22px;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 16px;
+        }
+
+        .modal-tool-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary-navy);
+            margin-top: 8px;
+        }
+
+        .modal-block {
+            margin-bottom: 18px;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 16.5px;
+            line-height: 1.7;
+        }
+
+        .modal-def-block {
+            background: #F8FAFC;
+            border-left: 5px solid #0284C7;
+            color: var(--text-dark);
+        }
+
+        .modal-scene-block {
+            background: #F0FDF4;
+            border-left: 5px solid #16A34A;
+            color: #14532D;
+        }
+
+        .modal-dialogue-block {
+            background: #F0F9FF;
+            border-left: 5px solid #0284C7;
+            color: #0C4A6E;
+        }
+
+        .modal-keypoint-block {
+            background: #FFFBEB;
+            border-left: 5px solid #F59E0B;
+            color: #78350F;
+        }
+
         /* Footer */
         footer.site-footer {
             background: var(--primary-navy);
@@ -1476,82 +1606,85 @@
 
         <!-- TRM 15 Tools Blueprint -->
         <div class="trm-blueprint-card">
-            <h3>🛡️ TRM 團隊資源管理四大模組與 15 大工具臨床速查速用矩陣</h3>
+            <h3>🛡️ TRM 團隊資源管理四大模組與 13 大工具臨床速查速用矩陣（點擊框格彈出臨床實戰示範案例）</h3>
             <div class="trm-tools-grid">
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-lead">領導 Leadership</span>
-                    <h4>1. Brief (事前說明)</h4>
-                    <p>進場前 30 秒召開短會，指派 Leader 與崗位職責，建立共同心智模型 (Shared Mental Model)。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(1)">
+                    <span class="tool-badge badge-lead">領導模組 (Leadership)</span>
+                    <h4>1. Brief (事前說明會議)</h4>
+                    <p>任務開工前召開 30 秒至 1 分鐘短會，指派 Leader 與崗位職責、建立共同心智模型 (Shared Mental Model) 並預防潛在風險。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-lead">領導 Leadership</span>
-                    <h4>2. Huddle (動態快開)</h4>
-                    <p>情境突變（如隔壁突發 OHCA）時，發動 5-10 秒會議，迅速重整分工與跨室支援。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(2)">
+                    <span class="tool-badge badge-lead">領導模組 (Leadership)</span>
+                    <h4>2. Huddle (動態快開會議)</h4>
+                    <p>情境劇變或突發危機時，團隊成員隨時發動 5-10 秒面對面會議，迅速重組人力、調整處置優先級與分配跨室支援。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-lead">領導 Leadership</span>
-                    <h4>3. Debrief (事後檢討)</h4>
-                    <p>演練結束後，運用 ERCP 模型（經驗 ➔ 反思 ➔ 概念 ➔ 計畫）總結團隊優缺點。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(3)">
+                    <span class="tool-badge badge-lead">領導模組 (Leadership)</span>
+                    <h4>3. Debrief (事後經驗反思)</h4>
+                    <p>演練或急救結束後，運用 ERCP 經驗學習模型（Experience 體驗 ➔ Reflection 反思 ➔ Conceptualization 歸納理論 ➔ Plan 行動規劃）進行非懲罰性團隊檢討。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-sit">情境監測 Monitoring</span>
-                    <h4>4. STEP 原則</h4>
-                    <p>全面監測病人狀態 (Status)、團隊人力 (Team)、環境設備 (Environment)、目標進度 (Progress)。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(4)">
+                    <span class="tool-badge badge-sit">情境監測模組 (Situation Monitoring)</span>
+                    <h4>4. STEP 狀況監測模型</h4>
+                    <p>持續進行全方位情境察覺：Status of patient (病人生理現況)、Team (隊友負荷與狀態)、Environment (環境與物料設備)、Progress (搶救目標進度)。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-sit">情境監測 Monitoring</span>
-                    <h4>5. Cross-Monitoring (交叉監測)</h4>
-                    <p>同仁互相檢視有無抽錯藥、漏拿 AED 或忘記關閉高壓推注，主動防錯互補。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(5)">
+                    <span class="tool-badge badge-sit">情境監測模組 (Situation Monitoring)</span>
+                    <h4>5. Cross-Monitoring (團隊交叉監測)</h4>
+                    <p>團隊成員互相監督、主動提供防錯第二道防線（Double Check），在錯誤尚未抵達病人端前即時攔截。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-sit">情境監測 Monitoring</span>
-                    <h4>6. I'M SAFE</h4>
-                    <p>自我身心評估（疾病、藥物、壓力、酒精、疲勞、情緒），預防同仁失常風險。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(6)">
+                    <span class="tool-badge badge-sit">情境監測模組 (Situation Monitoring)</span>
+                    <h4>6. I'M SAFE 自身身心檢核</h4>
+                    <p>個人高壓任務前的自我身心檢核表：Illness (疾病), Medication (服藥), Stress (壓力), Alcohol (酒精), Fatigue (疲勞), Emotion (情緒)。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
-                    <h4>7. Task Assistance (任務支援)</h4>
-                    <p>察覺同伴吃力或超負荷時，主動說出「我來接手壓胸 / 我來準備氣道」。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(7)">
+                    <span class="tool-badge badge-mut">互助合作模組 (Mutual Support)</span>
+                    <h4>7. Task Assistance (主動任務支援)</h4>
+                    <p>察覺隊友超負荷或身心吃力時，主動伸出援手接手任務；換手動作流暢，確保 CPR 按壓中斷小於 10 秒。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
-                    <h4>8. CUS 階梯警示法則</h4>
-                    <p><strong>I am Concerned (我擔心)</strong> ➔ <strong>I am Uncomfortable (我不舒服)</strong> ➔ <strong>This is a Safety Issue (這是安全問題)</strong>！</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(8)">
+                    <span class="tool-badge badge-mut">互助合作模組 (Mutual Support)</span>
+                    <h4>8. CUS 階梯式安全警示</h4>
+                    <p>階梯式專業警示金句：I am Concerned (我感到擔心) ➔ I am Uncomfortable (我感到不安) ➔ This is a Safety Issue (這是病人安全問題)！</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(9)">
+                    <span class="tool-badge badge-mut">互助合作模組 (Mutual Support)</span>
                     <h4>9. Two-Challenge & Stop the Line</h4>
-                    <p>面對危險行為發起兩次挑戰；對方未改善時，立即強制中斷流程 (Stop the Line)！</p>
+                    <p>授權全員發起至少兩次明確挑戰制止危險行為；若無效立即強制中止流程 (Stop the Line)！</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(10)">
+                    <span class="tool-badge badge-mut">互助合作模組 (Mutual Support)</span>
                     <h4>10. DESC 衝突解決模式</h4>
-                    <p>Describe (客觀描述) ➔ Express (表達顧慮) ➔ Suggest (提出替代方案) ➔ Consequences (說明正面成效)。</p>
+                    <p>Describe (客觀事實) ➔ Express (專業顧慮) ➔ Suggest (替代方案) ➔ Consequences (正面成效) 四步溝通法。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
-                    <h4>11. SBAR / ISBAR 通報法</h4>
-                    <p><strong>I</strong>ntroduction (自我介紹) ➔ <strong>S</strong>ituation (現況) ➔ <strong>B</strong>ackground (病史) ➔ <strong>A</strong>ssessment (評估) ➔ <strong>R</strong>ecommendation (建議)。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(11)">
+                    <span class="tool-badge badge-comm">溝通技巧模組 (Communication)</span>
+                    <h4>11. SBAR / ISBAR 結構化通報</h4>
+                    <p>Introduction (自我介紹) ➔ Situation (現況) ➔ Background (背景) ➔ Assessment (評估) ➔ Recommendation (建議)。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
-                    <h4>12. Call-Out (即刻宣告)</h4>
-                    <p>發現關鍵危急徵象，大聲向全場宣告（如「Call-Out！病人失去意識無脈搏，心電圖為 VF！」）。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(12)">
+                    <span class="tool-badge badge-comm">溝通技巧模組 (Communication)</span>
+                    <h4>12. Call-Out (即刻危急宣告)</h4>
+                    <p>緊急關鍵時刻將異常數據、危急心律或生理劇變大聲宣告，打破各自沈默，使全體成員共享資訊。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
-                    <h4>13. Check-Back (閉環確認)</h4>
-                    <p>閉環閉鎖式溝通（Closed-Loop Communication），下達指令必口頭複誦確認執行。</p>
-                </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
-                    <h4>14. Handoff (標準交接)</h4>
-                    <p>病患轉移單位或換班時，使用標準化查檢表無漏接轉交病人所有資訊。</p>
-                </div>
-                <div class="trm-tool-box">
-                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
-                    <h4>15. Feedback (建設性回饋)</h4>
-                    <p>及時、具體、針對行為而非個人、具改進導向之跨職類專業回饋。</p>
+                <div class="trm-tool-box interactive-tool-box" onclick="openTrmModal(13)">
+                    <span class="tool-badge badge-comm">溝通技巧模組 (Communication)</span>
+                    <h4>13. Check-Back (閉環式溝通)</h4>
+                    <p>發送者下達指令 ➔ 接收者口頭重複確認 ➔ 發送者確認驗證「沒錯！」。100% 消除口頭醫囑誤解。</p>
+                    <div class="tool-click-hint">👆 點擊查看臨床實戰案例</div>
                 </div>
             </div>
         </div>
@@ -1931,6 +2064,17 @@
         </article>
     </section>
 
+
+    <!-- TRM Tool Modal -->
+    <div id="trm-modal" class="trm-modal-overlay" onclick="closeTrmModal(event)">
+        <div class="trm-modal-container" onclick="event.stopPropagation()">
+            <button class="trm-modal-close" onclick="closeTrmModal()">&times;</button>
+            <div id="trm-modal-content">
+                <!-- Dynamically injected -->
+            </div>
+        </div>
+    </div>
+
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
         <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
@@ -1975,6 +2119,49 @@
         }
 
         
+        
+        // TRM Tools Data & Modal Logic
+        const trmToolsList = [{"id": 1, "name": "Brief (事前說明會議)", "module": "領導模組 (Leadership)", "badge_class": "badge-lead", "definition": "任務開工前召開 30 秒至 1 分鐘短會，指派 Leader 與崗位職責、建立共同心智模型 (Shared Mental Model) 並預防潛在風險。", "scenario": "CT 門診腹部顯影劑增強攝影班開班前，Leader 放射師召集主照放射師 A、外圍引導放射師 B、留置針與給藥護理師 C 進行 30 秒開工 Brief。", "dialogue": "<strong>Leader 放射師：</strong>「各位早安，今天我們負責腹部增強 CT 班。放射師 A 負責操控台影像重建與單據三讀五對；護理師 C 負責留置針管路評估與顯影劑推注監控；放射師 B 負責準備區病患引導與空腹問診。<br><br>今天有 3 位空腹糖尿病患與 2 位高齡中風長者，請全員特別注意<strong>低血糖防跌與對比劑過敏</strong>徵象，有任何異常隨時保持 Call-Out 溝通！」<br><br><strong>全員覆誦：</strong>「收到！共同心智模型建立！」", "keypoint": "明確確立單一指揮官 (Leader)、清晰指派職責、主動預判當日病患高風險點（低血糖/過敏/防跌）。"}, {"id": 2, "name": "Huddle (動態快開會議)", "module": "領導模組 (Leadership)", "badge_class": "badge-lead", "definition": "情境劇變或突發危機時，團隊成員隨時發動 5-10 秒面對面會議，迅速重組人力、調整處置優先級與分配跨室支援。", "scenario": "CT 室正在掃描時，隔壁一般 X 光室突然響起 Code Blue 急救警報（病患突發 VF 心室顫動倒地），團隊需在 5 秒內進行危機決策與動態人力切割。", "dialogue": "<strong>Leader 放射師發動快開：</strong>「團隊 Huddle！原病人目前顯影劑推注完畢、生命徵象穩定，請護理師 C 留守原室照護監測並拉起防跌護欄；我與放射師 B 攜帶備用 AED 與氧氣瓶，立即跨室支援隔壁搶救！放射師 B 拿 AED、我帶氧氣，立即出發！」<br><br><strong>護理師 C 閉環確認：</strong>「收到！我留守原室照顧病人，床欄已拉起，保證安全！」", "keypoint": "突發多重危機時主動發動 Huddle；落實動態留守原則，原室絕不棄置病人；支援分工秒級明確。"}, {"id": 3, "name": "Debrief (事後經驗反思)", "module": "領導模組 (Leadership)", "badge_class": "badge-lead", "definition": "演練或急救結束後，運用 ERCP 經驗學習模型（Experience 體驗 ➔ Reflection 反思 ➔ Conceptualization 歸納理論 ➔ Plan 行動規劃）進行非懲罰性團隊檢討。", "scenario": "雙病人急救演練結束後 5 分鐘，指導考官召集全員在控制室進行 3 分鐘結構化反思。", "dialogue": "<strong>引導者 (Debriefer)：</strong>「剛剛在轉室通報時，放射師 A 電話通報漏掉了 Introduction 自我介紹，當時的心智思考邏輯是什麼？」<br><br><strong>放射師 A 反思：</strong>「當時因為隔壁突發 VF 很著急，只想趕快把血壓掉到 75 的數值報出去，一心急就忘記先報自己的身份和檢查室地點。」<br><br><strong>引導者歸納：</strong>「非常好，能察覺情緒對心智的影響。那我們下週演練如何將 ISBAR 提示卡直接貼在電話筒旁，建立防呆機制？」", "keypoint": "營造心理安全感（Psychological Safety）；不針對個人咎責，聚焦於系統流程與心智模型缺陷改進。"}, {"id": 4, "name": "STEP 狀況監測模型", "module": "情境監測模組 (Situation Monitoring)", "badge_class": "badge-sit", "definition": "持續進行全方位情境察覺：Status of patient (病人生理現況)、Team (隊友負荷與狀態)、Environment (環境與物料設備)、Progress (搶救目標進度)。", "scenario": "護理師在推注前打開急救備品櫃發現缺少 50% 葡萄糖 (D50W) 備藥（Environment），同時看到 SP 病人面色慘白冒冷汗（Status），立即向團隊通報。", "dialogue": "<strong>護理師 C 宣告：</strong>「STEP 狀況通報！(S) 病人冒冷汗肢體顫抖，主訴極度頭暈，高度懷疑空腹低血糖發作；(E) 但本室急救櫃內 D50W 備藥用罄；(T) 請放射師同仁跨區調藥；(P) 我們目前首要進度是先完成血糖量測並防跌！」<br><br><strong>放射師 A 回復：</strong>「收到！我立刻直撥電話至隔壁準備區緊急借調高糖藥包，2 分鐘內送達！」", "keypoint": "同時具備「看見病人痛苦」與「感知環境設備缺料」的敏銳雷達，將隱形風險大聲透明化。"}, {"id": 5, "name": "Cross-Monitoring (團隊交叉監測)", "module": "情境監測模組 (Situation Monitoring)", "badge_class": "badge-sit", "definition": "團隊成員互相監督、主動提供防錯第二道防線（Double Check），在錯誤尚未抵達病人端前即時攔截。", "scenario": "護理師設定高壓注射器流速與總量時，放射師站在操作台旁同步注視注射面板進行獨立雙重核對。", "dialogue": "<strong>放射師 A 在旁注視螢幕確認：</strong>「護理師 C，我幫您進行交叉確認：本次腹部動脈相掃描，高壓注射器流速設定 3.5 mL/s，顯影劑總劑量 80 mL，壓力上限 300 psi，確認設定無誤！」<br><br><strong>護理師 C 回覆：</strong>「感謝交叉確認，設定與醫囑完全相符，可以啟動！」", "keypoint": "不把隊友的提醒視為懷疑或找麻煩，而是將 Cross-Monitoring 視為保障團隊與病患的「同袍防護罩」。"}, {"id": 6, "name": "I'M SAFE 自身身心檢核", "module": "情境監測模組 (Situation Monitoring)", "badge_class": "badge-sit", "definition": "個人高壓任務前的自我身心檢核表：Illness (疾病), Medication (服藥), Stress (壓力), Alcohol (酒精), Fatigue (疲勞), Emotion (情緒)。", "scenario": "夜班連環急診重大車禍，放射師因連續輪值感到極度疲憊（Fatigue），主動向接班搭檔說明自身狀態，建立防呆互補機制。", "dialogue": "<strong>放射師 A 坦誠溝通：</strong>「同仁，我今天連值兩班身體非常疲勞（Fatigue），反應和專注力有點下降。今天的所有顯影劑推注流速、病人姓名手圈辨識，請你務必在我操作時幫我進行第二道 Double Check，我們互相守護！」<br><br><strong>放射師 B 回覆：</strong>「沒問題！你負責定位，我來幫你把關所有單據核對與劑量參數！」", "keypoint": "承認脆弱與疲勞是專業成熟的展現；及早揭露個人極限，團隊方能及時啟動安全代償機制。"}, {"id": 7, "name": "Task Assistance (主動任務支援)", "module": "互助合作模組 (Mutual Support)", "badge_class": "badge-mut", "definition": "察覺隊友超負荷或身心吃力時，主動伸出援手接手任務；換手動作流暢，確保 CPR 按壓中斷小於 10 秒。", "scenario": "急救現場一名同仁正在全力進行高品質胸外按壓（CPR）已超過 90 秒，額頭冒汗、按壓深度開始減弱，另一名同仁主動上前接替。", "dialogue": "<strong>放射師 A 主動上前：</strong>「同仁你按壓已經快兩分鐘、很吃力了，下一循環換我接手壓胸！你在旁邊準備甦醒球 BVM 給氧，數到三換手：一、二、換！」<br><br><strong>按壓換手過程：</strong>放射師 A 在 3 秒內無縫切入胸骨定位繼續按壓，極致壓縮中斷時間（＜ 10 秒）。", "keypoint": "主動觀察同儕生理疲乏信號；換手節奏明快果決，嚴格遵守按壓中斷小於 10 秒的評核鐵律。"}, {"id": 8, "name": "CUS 階梯式安全警示", "module": "互助合作模組 (Mutual Support)", "badge_class": "badge-mut", "definition": "階梯式專業警示金句：I am Concerned (我感到擔心) ➔ I am Uncomfortable (我感到不安) ➔ This is a Safety Issue (這是病人安全問題)！", "scenario": "開單醫師欲對急性氣喘發作病患強行推注顯影劑，放射師依序發出階梯警示，堅決捍衛病人生命安全。", "dialogue": "<strong>放射師堅定發聲：</strong>「醫師，我非常<strong>擔心（Concerned）</strong>病人氣喘病史且現在呼吸急促；我對直接推注高流速顯影劑感到很<strong>不安（Uncomfortable）</strong>；這攸關病人急性喉頭水腫窒息的<strong>生命安全問題（Safety Issue）</strong>！請立刻暫停推注，先由急診醫師聽診評估！」", "keypoint": "精準使用「擔心」、「不安」、「安全問題」三段關鍵詞彙；口氣堅定專業、不帶情緒性字眼。"}, {"id": 9, "name": "Two-Challenge & Stop the Line", "module": "互助合作模組 (Mutual Support)", "badge_class": "badge-mut", "definition": "授權全員發起至少兩次明確挑戰制止危險行為；若無效立即強制中止流程 (Stop the Line)！", "scenario": "AED 準備放電電擊前，放射師發現護理師因專注準備藥物，右手仍然扶在病床鐵床欄上，隨時有觸電致命危險。", "dialogue": "<strong>第一次挑戰：</strong>「等一下！護理師手還在床上！」（對方可能因心慌未注意）<br><br><strong>第二次挑戰（拉高音量、指令具體）：</strong>「<strong>護理師請立刻鬆手！離開病床！電擊會造成觸電危險！</strong>」<br><br><strong>強制停工：</strong>「<strong>Stop the Line！確認全員離開病人 Clear，我才按下電擊鈕！</strong>」", "keypoint": "挑戰必須達到至少兩次；危險未排除前絕不姑息，果斷啟動 Stop the Line，維護全場醫護與病患安全。"}, {"id": 10, "name": "DESC 衝突解決模式", "module": "互助合作模組 (Mutual Support)", "badge_class": "badge-mut", "definition": "Describe (客觀事實) ➔ Express (專業顧慮) ➔ Suggest (替代方案) ➔ Consequences (正面成效) 四步溝通法。", "scenario": "急救現場護理師主張「先花時間抽 Epinephrine 給藥」，放射師主張「先持續高品質 CPR 與去顫電擊」，雙方處置順序分歧。", "dialogue": "<strong>放射師運用 DESC 化解衝突：</strong><br>• <strong>(D) Describe：</strong>「護理師，現在病人剛轉為 VF 心室顫動，處於心跳停止無脈搏狀態。」<br>• <strong>(E) Express：</strong>「如果我們先花時間抽藥而中斷按壓超過 10 秒，腦部會缺血缺氧，電擊成功率會大幅下降。」<br>• <strong>(S) Suggest：</strong>「我建議由我與同仁立即開始高品質 CPR 與貼片電擊，您專心準備管路與藥物。」<br>• <strong>(C) Consequences：</strong>「這樣按壓不中斷搭配電擊，能將病人腦部灌流維持在最佳狀態，救活機會最高！」", "keypoint": "不進行人身攻擊與指責，依客觀醫學指引與病患最大福祉展開建設性對話。"}, {"id": 11, "name": "SBAR / ISBAR 結構化通報", "module": "溝通技巧模組 (Communication)", "badge_class": "badge-comm", "definition": "Introduction (自我介紹) ➔ Situation (現況) ➔ Background (背景) ➔ Assessment (評估) ➔ Recommendation (建議)。", "scenario": "病人在 CT 室注射顯影劑後突發嚴重過敏性休克，放射師撥打急救專線向急診主責醫師通報搶救。", "dialogue": "<strong>放射師電話通報：</strong><br>• <strong>(I) Introduction：</strong>「急診張醫師您好，我是 CT 室放射師林小華。」<br>• <strong>(S) Situation：</strong>「急診 3 床王先生剛剛在 CT 室突發嚴重顯影劑過敏性休克。」<br>• <strong>(B) Background：</strong>「68 歲男性，預計做腹部增強 CT，無過敏病史。」<br>• <strong>(A) Assessment：</strong>「目前出現全身大面積風疹塊、喘鳴音 (Stridor)、血壓驟降至 75/40 mmHg。」<br>• <strong>(R) Recommendation：</strong>「請求急診醫師與急救團隊立刻到場支援，並指示給予 Epinephrine (1:1000) 0.3 mg 肌肉注射！」", "keypoint": "五大要素完備，第一句「自我介紹與確認地點 (I)」是評審最常抓漏之扣分重災區。"}, {"id": 12, "name": "Call-Out (即刻危急宣告)", "module": "溝通技巧模組 (Communication)", "badge_class": "badge-comm", "definition": "緊急關鍵時刻將異常數據、危急心律或生理劇變大聲宣告，打破各自沈默，使全體成員共享資訊。", "scenario": "放射師在檢查台旁監測時，發現病人突然失去意識，監視器顯示致死性心室顫動 (VF)。", "dialogue": "<strong>放射師大聲宣告：</strong>「<strong>Call-Out！病人意識喪失、頸動脈無脈搏！心電圖轉為 Ventricular Fibrillation (VF)！啟動 Code Blue！立即準備 AED 電擊！</strong>」<br><br><strong>全場響應：</strong>護理師推急救車、同仁就位壓胸，全員瞬間進入搶救心智模型！", "keypoint": "聲音宏亮、資訊精確；瞬間喚醒全場危機意識，避免一人看見危機卻無人知曉。"}, {"id": 13, "name": "Check-Back (閉環式溝通)", "module": "溝通技巧模組 (Communication)", "badge_class": "badge-comm", "definition": "發送者下達指令 ➔ 接收者口頭重複確認 ➔ 發送者確認驗證「沒錯！」。100% 消除口頭醫囑誤解。", "scenario": "急救現場醫師下達口頭緊急給藥指令，護理師與放射師進行標準三方閉環確認。", "dialogue": "<strong>醫師下達醫囑：</strong>「給予 50% 葡萄糖 (D50W) 2 支 IV push！」<br><br><strong>護理師覆誦 (Check-Back)：</strong>「<strong>收到，給予 50% 葡萄糖 (D50W) 2 支靜脈推注！</strong>」<br><br><strong>醫師閉環驗證：</strong>「<strong>沒錯！</strong>」<br><br><strong>護理師執行後回報：</strong>「<strong>報告醫師，D50W 2 支已全數推注完成！</strong>」", "keypoint": "口頭重複指令內容、劑量與途徑，執行完畢主動回報；嚴禁只點頭默默做的無聲處置。"}];
+
+        function openTrmModal(toolId) {
+            const tool = trmToolsList.find(t => t.id === toolId);
+            if (!tool) return;
+
+            const contentDiv = document.getElementById('trm-modal-content');
+            contentDiv.innerHTML = `
+                <div class="modal-tool-header">
+                    <span class="tool-badge ${tool.badge_class}">${tool.module}</span>
+                    <h2 class="modal-tool-title">${tool.id}. ${tool.name}</h2>
+                </div>
+                <div class="modal-block modal-def-block">
+                    <strong style="color: #0284C7;">📌 工具核心定義：</strong><br>
+                    ${tool.definition}
+                </div>
+                <div class="modal-block modal-scene-block">
+                    <strong style="color: #16A34A;">🏥 臨床實戰情境脈絡：</strong><br>
+                    ${tool.scenario}
+                </div>
+                <div class="modal-block modal-dialogue-block">
+                    <strong style="color: #0284C7;">💬 標準示範對話與臨床話術：</strong><br>
+                    <div style="margin-top: 8px;">${tool.dialogue}</div>
+                </div>
+                <div class="modal-block modal-keypoint-block">
+                    <strong style="color: #B45309;">🏆 評審評分關鍵與盲點防範：</strong><br>
+                    ${tool.keypoint}
+                </div>
+            `;
+
+            const modal = document.getElementById('trm-modal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTrmModal(e) {
+            const modal = document.getElementById('trm-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         // Module Switcher Logic
         let currentModule = 'traps';
 
@@ -2079,6 +2266,7 @@
 
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
+                closeTrmModal();
                 closeLightbox();
             }
         });
