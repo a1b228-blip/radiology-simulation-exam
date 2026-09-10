@@ -496,6 +496,208 @@
             outline: none;
         }
 
+        
+        /* Module Switcher Styles */
+        .module-switcher {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 16px;
+            width: 100%;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 14px;
+        }
+
+        .btn-module {
+            background: #F1F5F9;
+            color: var(--text-dark);
+            border: 2px solid #CBD5E1;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-module:hover {
+            background: #E2E8F0;
+            border-color: #94A3B8;
+            transform: translateY(-1px);
+        }
+
+        .btn-module.active {
+            background: linear-gradient(135deg, #0F2035 0%, #1A365D 100%);
+            color: #FFFFFF;
+            border-color: #0284C7;
+            box-shadow: 0 4px 14px rgba(15, 32, 53, 0.25);
+        }
+
+        .btn-module.active.btn-holistic {
+            background: linear-gradient(135deg, #064E3B 0%, #0F766E 100%);
+            border-color: #10B981;
+            box-shadow: 0 4px 14px rgba(6, 78, 59, 0.25);
+        }
+
+        /* Holistic Section Specific Elements */
+        .holistic-hero {
+            background: linear-gradient(135deg, #064E3B 0%, #0F766E 50%, #1E3A8A 100%);
+            color: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .holistic-hero h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .holistic-hero p {
+            font-size: 19px;
+            color: #E6FFFA;
+            line-height: 1.7;
+            max-width: 1080px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 20px;
+            margin-top: 26px;
+        }
+
+        .matrix-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            padding: 22px;
+            color: #FFFFFF;
+        }
+
+        .matrix-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .matrix-card ul {
+            padding-left: 20px;
+            font-size: 16px;
+            color: #F0FDFA;
+            line-height: 1.65;
+        }
+
+        .matrix-card li {
+            margin-bottom: 6px;
+        }
+
+        /* TRM Blueprint Card */
+        .trm-blueprint-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            border-left: 6px solid #0D9488;
+        }
+
+        .trm-blueprint-card h3 {
+            font-size: 25px;
+            font-weight: 900;
+            color: #0F766E;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .trm-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .trm-tool-box {
+            background: #F8FAFC;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .trm-tool-box .tool-badge {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .badge-lead { background: #FEF3C7; color: #92400E; }
+        .badge-sit { background: #E0E7FF; color: #3730A3; }
+        .badge-mut { background: #DCFCE7; color: #166534; }
+        .badge-comm { background: #FCE7F3; color: #9D174D; }
+
+        .trm-tool-box h4 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 6px;
+        }
+
+        .trm-tool-box p {
+            font-size: 15.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Holistic Scenario Card Customizations */
+        .card-holistic .trap-card-header {
+            background: linear-gradient(90deg, #064E3B 0%, #0F766E 100%);
+        }
+
+        .badge-holistic {
+            background: #A7F3D0;
+            color: #064E3B;
+            font-size: 14.5px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+
+        .block-holistic-care {
+            background: #F0FDF4;
+            border-color: #DCFCE7;
+            color: #166534;
+        }
+        .block-holistic-care .block-label { color: #15803D; }
+
+        .block-eval {
+            background: #FFFBEB;
+            border-color: #FEF3C7;
+            color: #92400E;
+        }
+        .block-eval .block-label { color: #B45309; }
+
+        .badge-ethics {
+            background: #FDE68A;
+            color: #78350F;
+        }
+
         /* Footer */
         footer.site-footer {
             background: var(--primary-navy);
@@ -530,19 +732,33 @@
     <!-- Sticky Nav & Filter Bar -->
     <nav class="nav-sticky-wrap">
         <div class="nav-inner">
-            <div class="filter-buttons">
-                <button class="btn-filter active" onclick="filterCategory('all', this)">全部題型 (13)</button>
+            <div class="module-switcher">
+                <button id="btn-mod-traps" class="btn-module active" onclick="switchModule('traps')">
+                    🎯 臨床高階陷阱題 (13)
+                </button>
+                <button id="btn-mod-holistic" class="btn-module btn-holistic" onclick="switchModule('holistic')">
+                    🌿 全人醫療與TRM 專區 (6大情境與心法)
+                </button>
+            </div>
+            <div id="sub-filters-traps" class="filter-buttons">
+                <button class="btn-filter active" onclick="filterCategory('all', this)">全部陷阱題 (13)</button>
                 <button class="btn-filter" onclick="filterCategory('xray', this)">📷 一般 X 光篇 (7)</button>
                 <button class="btn-filter" onclick="filterCategory('ct', this)">🖥️ 電腦斷層 CT 篇 (6)</button>
             </div>
+            <div id="sub-filters-holistic" class="filter-buttons" style="display: none;">
+                <button class="btn-filter active" onclick="filterHolistic('all', this)">全部情境 (6)</button>
+                <button class="btn-filter" onclick="filterHolistic('ethics', this)">⚖️ 倫理與安全紅線</button>
+                <button class="btn-filter" onclick="filterHolistic('vulnerable', this)">🤝 弱勢同理與心理</button>
+                <button class="btn-filter" onclick="filterHolistic('crisis', this)">🚨 突發多重危機</button>
+            </div>
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="搜尋陷阱關鍵字（如：右心症、氣胸、骨折、假牙、主動脈...）" oninput="searchTraps()">
+                <input type="text" id="searchInput" class="search-input" placeholder="搜尋關鍵字（如：eGFR、失智、懷孕、DNR、MRI、骨折、氣胸...）" oninput="searchAll()">
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <div id="section-traps" class="container">
 
         <!-- Overview Card -->
         <section class="overview-card">
@@ -1215,6 +1431,506 @@
 
     </div>
 
+<!-- DEDICATED SECTION: 全人醫療與TRM -->
+    <section id="section-holistic" class="container" style="display: none;">
+        <!-- Hero Overview -->
+        <div class="holistic-hero">
+            <h2>🌿 全人醫療與 TRM 團隊資源管理實戰專區</h2>
+            <p>醫策會情境模擬競賽中，團隊溝通與全人照護占評分 50% 以上！本專區深入剖析「身、心、靈、社」四全照護維度與 TRM 15 大工具的臨床無縫嵌合，提供完整詳解、考驗意圖、扣分盲點與標準示範對話，助您掌握評審滿分關鍵！</p>
+            
+            <div class="matrix-grid">
+                <div class="matrix-card">
+                    <h3>🩺 身 (Physical)</h3>
+                    <ul>
+                        <li><strong>三讀五對落實：</strong>姓名、病歷號、生日、部位與單據。</li>
+                        <li><strong>防跌安全護欄：</strong>輪椅輪煞鎖死、床欄必拉、全程有人陪伴。</li>
+                        <li><strong>生理危機處置：</strong>低血糖 42 mg/dL 警示、顯影劑過敏即刻停藥。</li>
+                    </ul>
+                </div>
+                <div class="matrix-card">
+                    <h3>❤️ 心 (Mental)</h3>
+                    <ul>
+                        <li><strong>眼神平視與溫和對視：</strong>安撫 SP 恐慌與焦慮主訴。</li>
+                        <li><strong>預防性心理衛教：</strong>推注前預告顯影劑熱感，降低迷走神經驚慌。</li>
+                        <li><strong>杜絕冰冷操作：</strong>嚴禁低頭只看儀器、漠視病人痛苦主訴。</li>
+                    </ul>
+                </div>
+                <div class="matrix-card">
+                    <h3>🕊️ 靈 (Spiritual)</h3>
+                    <ul>
+                        <li><strong>生命尊嚴維護：</strong>嚴守安寧緩和 DNR 意願，拒絕暴力無益急救。</li>
+                        <li><strong>蓋被保暖遮蔽隱私：</strong>急救或檢查後第一時間整理衣服並蓋被！</li>
+                        <li><strong>更衣私密空間：</strong>拉好隔簾，保護敏感檢查部位隱私。</li>
+                    </ul>
+                </div>
+                <div class="matrix-card">
+                    <h3>🤝 社 (Social)</h3>
+                    <ul>
+                        <li><strong>動態留守原則：</strong>雙病人危機調配人力時，原室絕不空無一人。</li>
+                        <li><strong>跨室無縫接軌：</strong>轉診傳送主動致電下一站落實 ISBAR 交接。</li>
+                        <li><strong>醫病共享決策 (SDM)：</strong>向家屬耐心理性說明替代醫療方案。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRM 15 Tools Blueprint -->
+        <div class="trm-blueprint-card">
+            <h3>🛡️ TRM 團隊資源管理四大模組與 15 大工具臨床速查速用矩陣</h3>
+            <div class="trm-tools-grid">
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-lead">領導 Leadership</span>
+                    <h4>1. Brief (事前說明)</h4>
+                    <p>進場前 30 秒召開短會，指派 Leader 與崗位職責，建立共同心智模型 (Shared Mental Model)。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-lead">領導 Leadership</span>
+                    <h4>2. Huddle (動態快開)</h4>
+                    <p>情境突變（如隔壁突發 OHCA）時，發動 5-10 秒會議，迅速重整分工與跨室支援。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-lead">領導 Leadership</span>
+                    <h4>3. Debrief (事後檢討)</h4>
+                    <p>演練結束後，運用 ERCP 模型（經驗 ➔ 反思 ➔ 概念 ➔ 計畫）總結團隊優缺點。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-sit">情境監測 Monitoring</span>
+                    <h4>4. STEP 原則</h4>
+                    <p>全面監測病人狀態 (Status)、團隊人力 (Team)、環境設備 (Environment)、目標進度 (Progress)。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-sit">情境監測 Monitoring</span>
+                    <h4>5. Cross-Monitoring (交叉監測)</h4>
+                    <p>同仁互相檢視有無抽錯藥、漏拿 AED 或忘記關閉高壓推注，主動防錯互補。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-sit">情境監測 Monitoring</span>
+                    <h4>6. I'M SAFE</h4>
+                    <p>自我身心評估（疾病、藥物、壓力、酒精、疲勞、情緒），預防同仁失常風險。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
+                    <h4>7. Task Assistance (任務支援)</h4>
+                    <p>察覺同伴吃力或超負荷時，主動說出「我來接手壓胸 / 我來準備氣道」。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
+                    <h4>8. CUS 階梯警示法則</h4>
+                    <p><strong>I am Concerned (我擔心)</strong> ➔ <strong>I am Uncomfortable (我不舒服)</strong> ➔ <strong>This is a Safety Issue (這是安全問題)</strong>！</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
+                    <h4>9. Two-Challenge & Stop the Line</h4>
+                    <p>面對危險行為發起兩次挑戰；對方未改善時，立即強制中斷流程 (Stop the Line)！</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-mut">互助合作 Mutual Support</span>
+                    <h4>10. DESC 衝突解決模式</h4>
+                    <p>Describe (客觀描述) ➔ Express (表達顧慮) ➔ Suggest (提出替代方案) ➔ Consequences (說明正面成效)。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
+                    <h4>11. SBAR / ISBAR 通報法</h4>
+                    <p><strong>I</strong>ntroduction (自我介紹) ➔ <strong>S</strong>ituation (現況) ➔ <strong>B</strong>ackground (病史) ➔ <strong>A</strong>ssessment (評估) ➔ <strong>R</strong>ecommendation (建議)。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
+                    <h4>12. Call-Out (即刻宣告)</h4>
+                    <p>發現關鍵危急徵象，大聲向全場宣告（如「Call-Out！病人失去意識無脈搏，心電圖為 VF！」）。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
+                    <h4>13. Check-Back (閉環確認)</h4>
+                    <p>閉環閉鎖式溝通（Closed-Loop Communication），下達指令必口頭複誦確認執行。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
+                    <h4>14. Handoff (標準交接)</h4>
+                    <p>病患轉移單位或換班時，使用標準化查檢表無漏接轉交病人所有資訊。</p>
+                </div>
+                <div class="trm-tool-box">
+                    <span class="tool-badge badge-comm">溝通技巧 Communication</span>
+                    <h4>15. Feedback (建設性回饋)</h4>
+                    <p>及時、具體、針對行為而非個人、具改進導向之跨職類專業回饋。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2>🏆 全人醫療與 TRM 6 大臨床情境高階實戰演練與詳解</h2>
+            <span class="tag-count">共 6 大情境</span>
+        </div>
+
+        <!-- SCENARIO 01 -->
+        <article class="trap-card card-holistic" data-category="ethics" data-keywords="egfr 腎功能 顯影劑 pc-aki 權威陡坡 cus two-challenge stop the line 開單醫師 爭執 停工">
+            <div class="trap-card-header">
+                <div class="trap-title-wrap">
+                    <span class="badge-holistic">【全人與 TRM 01】</span>
+                    <h3 class="trap-card-title">權威陡坡與用藥堅持：開單醫師強硬要求「eGFR 22 先打顯影劑再說」</h3>
+                </div>
+                <span class="trap-badge badge-ethics">⚖️ 倫理與安全紅線</span>
+            </div>
+            <div class="trap-card-body">
+                <div class="trap-details-column" style="grid-column: 1 / -1;">
+                    <div class="detail-block block-scene">
+                        <div class="block-label">📌 臨床情境劇本與現場脈絡</div>
+                        <p>急診醫師開立顯影劑腹部 CT 欲排除缺血性腸壞死。放射師於注射前再次落實三讀五對，核對急診生化報告發現病人 <strong>eGFR 僅 22 mL/min、Creatinine 3.4 mg/dL（重度腎功能不全）</strong>，且急診並未開立生理食鹽水預防水化醫囑。放射師致電急診開單醫師時，醫師在電話中因急診壅塞咆哮：「病人肚子痛得很厲害，出了任何事我全權負責！你們小放射師照開的打就對了，不要耽誤搶救！」</p>
+                    </div>
+                    <div class="detail-block block-intent">
+                        <div class="block-label">🎯 考驗意圖與評審視角</div>
+                        <p>考驗面對醫療階級權威（Authority Gradient）施壓時，團隊成員是否具備「病人生命安全高於一切」之專業底線與心理韌性；是否敢於落實 CUS 階梯警示與兩次挑戰（Two-Challenge Rule），果斷啟動 Stop the Line 強制停工，並協同放射專科醫師提出替代診療方案。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點與錯誤應對</div>
+                        <ul>
+                            <li><strong>盲點一（致命違規）：</strong>畏懼醫師官階或權威，抱持「反正醫師說他負責」的心態逕行注射，導致病患面臨急性腎小管壞死、不可逆洗腎與高血鉀休克風險（重度扣分甚至死當）。</li>
+                            <li><strong>盲點二：</strong>在電話中與開單醫師爆發情緒性衝突對罵，未客觀提出安全數據與替代路徑，延誤整體急診救治時機。</li>
+                            <li><strong>盲點三：</strong>未主動尋求現場放射科專科主治醫師介入，進行「同儕對同儕（Peer-to-Peer）」之跨科專科協調。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-holistic-care">
+                        <div class="block-label">🌿 全人醫療（身心靈社）與 TRM 深度破解詳解</div>
+                        <ol>
+                            <li><strong>身 (Physical Safety)：</strong>嚴守 ESUR / ACR 顯影劑腎病變指引（eGFR &lt; 30 mL/min 屬顯影劑注射極高危險群），守護病患剩餘腎功能與水電解質恆定。</li>
+                            <li><strong>心／社 (Mental & Social Care)：</strong>安撫床邊惶恐不安的病人：「阿伯您先休息，我們正在為您的腎臟安全與醫師進行專業評估，請放寬心。」向家屬展現專業把關態度。</li>
+                            <li><strong>TRM 工具落實 (CUS 階梯法則)：</strong>
+                                <ul>
+                                    <li><strong>C (Concerned)：</strong>「張醫師，我非常<strong>擔心</strong>病人 eGFR 僅 22 mL/min。」</li>
+                                    <li><strong>U (Uncomfortable)：</strong>「在沒有預防水化下直接推注顯影劑，我感到很<strong>不安</strong>。」</li>
+                                    <li><strong>S (Safety Issue)：</strong>「這攸關病人不可逆急性腎損傷與永久洗腎的<strong>病人安全問題</strong>！」</li>
+                                </ul>
+                            </li>
+                            <li><strong>Two-Challenge Rule &amp; Stop the Line：</strong>連續兩次挑戰醫師未果，果斷宣布 Stop the Line 暫緩注射，並啟動安全防呆機制——立即通報現場放射科主治醫師介入評估是否改做「非顯影劑平掃（Non-contrast CT）」或急診快速補液後再行評估。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 標準示範對話與臨床話術檢核點</div>
+                        <div class="dialogue-bubble">
+                            <strong>放射師致電開單醫師：</strong><br>
+                            「急診張醫師您好，我是 CT 室放射師。關於急診 3 床王先生的顯影劑 CT，我核對抽血報告，病人 <strong>eGFR 僅 22 mL/min、Creatinine 3.4</strong>。我非常<strong>擔心（Concerned）</strong>病人腎功能重度受損；在未給予水化下直接施打我感到非常<strong>不安（Uncomfortable）</strong>；這具有永久洗腎的<strong>病人生命安全風險（Safety Issue）</strong>！<br><br>
+                            依院內防差錯指引我們必須啟動 Stop the Line 暫緩推注！我建議我們先執行<strong>『腹部非顯影劑電腦斷層平掃』</strong>評估急腹症，我也已同步請現場放射科專科主治醫師看片覆核，我們一起找出最安全的替代方式！」
+                        </div>
+                    </div>
+                    <div class="detail-block block-eval">
+                        <div class="block-label">🏆 評審評分關鍵與防呆查核表</div>
+                        <ul>
+                            <li>[✓] 推注前確實查核 eGFR 與 Creatinine 檢驗數值。</li>
+                            <li>[✓] 面對權威施壓能冷靜、清晰講出 CUS 關鍵詞彙（擔心、不安、安全問題）。</li>
+                            <li>[✓] 落實兩次挑戰（Two-Challenge Rule）並果斷宣布 Stop the Line。</li>
+                            <li>[✓] 能主動提出合理替代醫療方案（平掃 CT / 水化 / 跨專科覆核）。</li>
+                            <li>[✓] 全程兼顧床邊病人心理安撫，避免醫病衝突外溢。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- SCENARIO 02 -->
+        <article class="trap-card card-holistic" data-category="vulnerable" data-keywords="失智 聽語障 拒檢 墜床 防跌 平視 握手 肢體安撫 高ma 短時間">
+            <div class="trap-card-header">
+                <div class="trap-title-wrap">
+                    <span class="badge-holistic">【全人與 TRM 02】</span>
+                    <h3 class="trap-card-title">弱勢同理與心理支持：重度失智／聽語障病人的恐慌拒檢與防墜</h3>
+                </div>
+                <span class="trap-badge badge-ethics">🤝 弱勢同理與心理</span>
+            </div>
+            <div class="trap-card-body">
+                <div class="trap-details-column" style="grid-column: 1 / -1;">
+                    <div class="detail-block block-scene">
+                        <div class="block-label">📌 臨床情境劇本與現場脈絡</div>
+                        <p>一位重度失智（伴隨嚴重聽語障礙）的 82 歲獨居阿嬤被推入 X 光室照立位胸片。因為陌生儀器運轉聲與冰冷機台環境，阿嬤極度驚恐，雙手不斷揮舞拍打、大聲哭喊，強烈拒絕站上檢查台，並試圖掙扎翻身下床，推床護欄差點被踢落，隨時有墜床骨折之高危險。</p>
+                    </div>
+                    <div class="detail-block block-intent">
+                        <div class="block-label">🎯 考驗意圖與評審視角</div>
+                        <p>考驗醫療團隊對失智、身心障礙等脆弱族群的人道同理心、非言語溝通技巧（Non-verbal Communication）與防跌防墜敏感度；評審嚴格檢視團隊是否具備「視病猶親」的溫度，嚴禁任何暴力強行壓制或冰冷態度。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點與錯誤應對</div>
+                        <ul>
+                            <li><strong>盲點一（態度冰冷）：</strong>以嚴厲口氣喝斥長者：「阿嬤不要亂動！再動就照不到了！」（直接扣分）。</li>
+                            <li><strong>盲點二（侵犯尊嚴）：</strong>團隊多人粗暴強行壓制四肢擺位（嚴重扣分，侵犯病人尊嚴並引發更劇烈激躁）。</li>
+                            <li><strong>盲點三（安全疏漏）：</strong>放射師逕自走回控制台，任由病患在無人防護下坐立或翻滾，造成墜床事故（一票否決項目）。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-holistic-care">
+                        <div class="block-label">🌿 全人醫療（身心靈社）與 TRM 深度破解詳解</div>
+                        <ol>
+                            <li><strong>心 (Mental Care - 非言語同理三部曲)：</strong>
+                                <ul>
+                                    <li><strong>蹲姿平視：</strong>放射師走到床邊蹲下，視線與阿嬤等高，消除由上而下的壓迫感。</li>
+                                    <li><strong>掌心溫度：</strong>溫柔握住阿嬤雙手，透過體溫與輕撫手背傳遞安全感。</li>
+                                    <li><strong>眼神微笑：</strong>真誠眼神注視，運用緩慢、溫和的台語或手勢圖卡安撫。</li>
+                                </ul>
+                            </li>
+                            <li><strong>身 (Physical Care &amp; 防跌)：</strong>評估阿嬤情緒亢奮不宜勉強立位，果斷將立位胸片彈性調整為「床邊仰臥照（Supine AP View）」，床欄兩側鎖死，全程有人防護。</li>
+                            <li><strong>社 (Social &amp; Family Support)：</strong>若有家屬或看護在場，主動引導穿戴防護鉛衣進入陪同握手；若無家屬，善用友善輔具化解恐慌。</li>
+                            <li><strong>TRM 任務協作 (Task Assistance &amp; 條件調配)：</strong>放射師 A 專責在床邊握手陪伴與防跌；操控台放射師 B 預先切換高 mA、極短曝光時間（0.01–0.02s），在阿嬤呼吸平穩瞬間一次曝光成功，避免重照。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 標準示範對話與臨床話術檢核點</div>
+                        <div class="dialogue-bubble">
+                            <strong>放射師 A 握住阿嬤的手並蹲下平視安撫：</strong><br>
+                            「阿嬤，莫驚喔！我是放射師小華，我們都在這裡保護妳喔。今天外面天氣很好對不對？我們輕輕躺著，拍個照就回病房吃點心囉，阿嬤最乖了。」<br><br>
+                            <strong>放射師 A 向操控台同仁發動 Call-Out：</strong><br>
+                            「Call-Out！阿嬤目前情緒焦躁不宜立位，我們改為床邊仰臥位胸片！我負責在床邊安撫保護防跌，請同仁調高 mA、切換超短曝光時間，等我回報隨時曝光！」<br><br>
+                            <strong>放射師 B 立即 Check-Back：</strong><br>
+                            「收到！切換仰臥胸片模式，設定 0.02 秒極短曝光，已準備完畢，隨時待命！」
+                        </div>
+                    </div>
+                    <div class="detail-block block-eval">
+                        <div class="block-label">🏆 評審評分關鍵與防呆查核表</div>
+                        <ul>
+                            <li>[✓] 絕不強行暴力壓制，採取蹲下平視與溫和握手肢體接觸。</li>
+                            <li>[✓] 全程專人床邊防護，床欄與輪煞落實到位。</li>
+                            <li>[✓] 能彈性改採仰臥胸片，兼顧影像診斷與病人安全。</li>
+                            <li>[✓] 團隊運用 Call-Out 與 Check-Back 完成快速曝光技術。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- SCENARIO 03 -->
+        <article class="trap-card card-holistic" data-category="ethics" data-keywords="懷孕 隱私 骨盆攝影 未成年 lmp 更衣室 胎兒 輻射防護 alara 驗孕">
+            <div class="trap-card-header">
+                <div class="trap-title-wrap">
+                    <span class="badge-holistic">【全人與 TRM 03】</span>
+                    <h3 class="trap-card-title">隱私保密與輻射防護兩難：16 歲青少女在父母面前的懷孕疑慮求證</h3>
+                </div>
+                <span class="trap-badge badge-ethics">⚖️ 倫理與安全紅線</span>
+            </div>
+            <div class="trap-card-body">
+                <div class="trap-details-column" style="grid-column: 1 / -1;">
+                    <div class="detail-block block-scene">
+                        <div class="block-label">📌 臨床情境劇本與現場脈絡</div>
+                        <p>一位 16 歲青少女因嚴重下腹悶痛由急診送來進行骨盆腔 X 光與骨盆 CT 掃描。放射師常規核對最後一次月經（LMP），女學生眼神驚恐、欲言又止，但身旁強勢的父母搶著斥責：「問這個幹嘛？我女兒才高中、生活很單純，絕對不可能懷孕！你們快點照，不要耽誤時間！」</p>
+                    </div>
+                    <div class="detail-block block-intent">
+                        <div class="block-label">🎯 考驗意圖與評審視角</div>
+                        <p>考驗面對生殖腺高劑量輻射時的法規意識（輻射安全 ALARA 原則），以及如何兼顧未成年病患隱私自主權與家庭張力，展現智慧與同理並存的專業溝通。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點與錯誤應對</div>
+                        <ul>
+                            <li><strong>盲點一（當眾揭露）：</strong>當著強勢父母的面直接質問少女性經驗，導致少女在羞愧與恐懼下堅決否認，造成潛在胚胎受高劑量輻射致畸風險（嚴重違反醫療隱私倫理）。</li>
+                            <li><strong>盲點二：</strong>輕信家屬說詞，未落實查證即逕行按下曝光曝光按鈕。</li>
+                            <li><strong>盲點三：</strong>直接與父母爆發口角衝突拒檢，未提供後續解決方案。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-holistic-care">
+                        <div class="block-label">🌿 全人醫療（身心靈社）與 TRM 深度破解詳解</div>
+                        <ol>
+                            <li><strong>身 (Physical Safety - 輻射防護)：</strong>骨盆與腹部 CT 劑量高達 8-10 mSv，懷孕初期（器官形成期）胎兒對游離輻射極度敏感，嚴守醫療曝險正當性。</li>
+                            <li><strong>靈與心 (Dignity &amp; Privacy - 善用更衣空間)：</strong>以「檢查前需脫去含金屬拉鍊之長褲、更換專用檢查袍」為由，自然引導少女單獨進入私密更衣室，創造安全無第三者的信任環境。</li>
+                            <li><strong>社 (Advocacy - 病人權益代言)：</strong>在更衣室內主動說明醫療保密義務，誠懇分析輻射利弊。若少女坦白，放射師代表病人發聲，致電急診醫師先補開急件驗孕。</li>
+                            <li><strong>TRM 工具 (SBAR 通報)：</strong>向急診醫師報告隱私關鍵評估，達成跨專科安全協同。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 標準示範對話與臨床話術檢核點</div>
+                        <div class="dialogue-bubble">
+                            <strong>放射師向父母溫和溝通：</strong><br>
+                            「爸爸媽媽不好意思，因為骨盆攝影褲子上有金屬拉鍊會遮蔽病灶，請您在門外候診區稍坐 2 分鐘，我先帶妹妹進更衣室換上專用檢查服。」<br><br>
+                            <strong>放射師在更衣室內單獨輕聲向少女說明：</strong><br>
+                            「妹妹妳別緊張，現在只有我們兩個人，妳跟我說的任何事情我都會為妳嚴格保密。因為照肚子會有較高劑量的 X 光輻射，如果肚子裡有小寶寶會受到很大傷害。妳上個月的月經真的有來嗎？有沒有可能懷孕？請妳放心告訴我，我們一起保護妳的身體。」<br><br>
+                            <strong>少女坦白後，放射師向急診醫師 ISBAR 通報：</strong><br>
+                            「急診張醫師您好，我是 X 光室放射師。16 歲王同學骨盆攝影，私下求證表示有驗孕必要，為防範胎兒輻射危害，建議暫緩 X 光，先在急診留尿驗孕（Urine hCG），等結果出爐再行評估，請問是否同意？」
+                        </div>
+                    </div>
+                    <div class="detail-block block-eval">
+                        <div class="block-label">🏆 評審評分關鍵與防呆查核表</div>
+                        <ul>
+                            <li>[✓] 敏銳察覺病患神色異樣，不在第三者面前追問敏感隱私。</li>
+                            <li>[✓] 巧妙運用「更換檢查袍」營造一對一私密對話環境。</li>
+                            <li>[✓] 展現醫學倫理中的保密原則與同理心。</li>
+                            <li>[✓] 透過 ISBAR 主動聯繫急診醫師啟動備援驗孕機制。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- SCENARIO 04 -->
+        <article class="trap-card card-holistic" data-category="ethics" data-keywords="dnr 安寧緩和 心跳停止 拒絕急救 蓋被 保暖 悲傷撫慰 尊嚴 善終">
+            <div class="trap-card-header">
+                <div class="trap-title-wrap">
+                    <span class="badge-holistic">【全人與 TRM 04】</span>
+                    <h3 class="trap-card-title">終極安寧倫理衝突：癌症末期 DNR 病人的突發心跳停止與家屬悲傷撫慰</h3>
+                </div>
+                <span class="trap-badge badge-ethics">⚖️ 倫理與安全紅線</span>
+            </div>
+            <div class="trap-card-body">
+                <div class="trap-details-column" style="grid-column: 1 / -1;">
+                    <div class="detail-block block-scene">
+                        <div class="block-label">📌 臨床情境劇本與現場脈絡</div>
+                        <p>一位胰臟癌末期合併多處轉移的 75 歲老先生在 CT 檢查台上掃描結束時，突發呼吸心跳停止（OHCA），監視器呈直線（Asystole）。在旁陪同的老伴（妻子）與長女當場痛哭失聲，拉著放射師的手哭喊：「不要再壓胸電擊折磨爸爸了！我們全家早就簽好安寧緩和（DNR）了，讓他好走吧！」然而，傳送交接單與放射排檢系統上，並未註記正式 DNR 印鑑。</p>
+                    </div>
+                    <div class="detail-block block-intent">
+                        <div class="block-label">🎯 考驗意圖與評審視角</div>
+                        <p>考驗面對突發死亡時，全人醫療「生命尊嚴與善終照護」之深層素養，以及面對法規、醫療急救與家屬心碎時的沉著應變能力；能否迅速查核法規文件，同時給予家屬最高規格的悲傷撫慰。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點與錯誤應對</div>
+                        <ul>
+                            <li><strong>盲點一（冷血破壞尊嚴）：</strong>不理會家屬哭求，粗暴將家屬強行推開，立刻機械化跳上床用力按壓胸骨、實施電擊（造成病人臨終肋骨斷裂受罪，評審極度反感的冷血行徑）。</li>
+                            <li><strong>盲點二：</strong>完全不動手也不通報，呆立現場（若事後發現根本未完成法定 DNR 簽署，將引發重大醫療過失）。</li>
+                            <li><strong>盲點三：</strong>忽視家屬崩潰情緒，未給予及時心理支持。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-holistic-care">
+                        <div class="block-label">🌿 全人醫療（身心靈社）與 TRM 深度破解詳解</div>
+                        <ol>
+                            <li><strong>靈 (Spiritual Care &amp; Dignity - 守護善終尊嚴)：</strong>尊重安寧緩和醫療精神，避免無益之創傷性侵入醫療，讓生命安詳尊嚴落幕。</li>
+                            <li><strong>心 (Bereavement Support - 家屬悲傷撫慰)：</strong>專人引導家屬至安全舒適處坐下，遞上面紙與溫水，真誠同理家屬痛苦。</li>
+                            <li><strong>身 (Physical Supportive Actions)：</strong>給予基本呼吸道通暢維持與高濃度氧氣（不實施胸外按壓與電擊），同步進行急救系統連線。</li>
+                            <li><strong>TRM 工具 (Huddle 分工 &amp; SBAR 急速查核)：</strong>Leader 迅速進行 5 秒動態人力拆分，一人陪伴家屬，一人以專線向原病房護理站核對 DNR 意願書簽署進度。確認生效後，團隊肅立向病人致敬，整理病容並<strong>第一時間蓋好被單保暖遮蔽</strong>。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 標準示範對話與臨床話術檢核點</div>
+                        <div class="dialogue-bubble">
+                            <strong>放射師 A 輕扶著太太與女兒至一旁沙發坐下安撫：</strong><br>
+                            「媽媽、姊姊，請先坐下來。我們充分理解您們想讓爸爸安詳離開、不再受折磨的心情。請放心，我們不會對爸爸做痛苦的壓胸電擊，我們團隊現在立即以專線幫您向原病房確認意願書文件，我們都在這裡陪著您們。」<br><br>
+                            <strong>放射師 B 致電安寧病房 SBAR 查證：</strong><br>
+                            「病房護理站您好，我是 CT 室。胰臟癌末期王老先生剛剛在檢查台突發心跳停止，家屬在場哭訴已簽署 DNR 拒絕急救，請立刻幫我確認病歷內意願書是否已完成法定簽署生效？……收到，確認已於今日上午完成法定 DNR 簽署！我們將維持尊嚴護理，協助護送回安寧病房。」<br><br>
+                            <strong>團隊為老先生整理衣物、蓋好被單保暖：</strong><br>
+                            「爺爺，檢查做完了，辛苦您了，現在沒有病痛了，一路好走。」
+                        </div>
+                    </div>
+                    <div class="detail-block block-eval">
+                        <div class="block-label">🏆 評審評分關鍵與防呆查核表</div>
+                        <ul>
+                            <li>[✓] 嚴禁粗暴機械化 CPR 破壞臨終尊嚴。</li>
+                            <li>[✓] 專人撫慰家屬悲傷，展現深厚人文關懷。</li>
+                            <li>[✓] 迅速透過電話與系統確認法定 DNR 法律要件。</li>
+                            <li>[✓] 善終護理落實（整理病容、遮蔽隱私、蓋被保暖）。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- SCENARIO 05 -->
+        <article class="trap-card card-holistic" data-category="crisis" data-keywords="mri 磁振造影 飛彈效應 zone iv zone iii 鐵製推車 氧氣鋼瓶 stop the line 轉移電擊">
+            <div class="trap-card-header">
+                <div class="trap-title-wrap">
+                    <span class="badge-holistic">【全人與 TRM 05】</span>
+                    <h3 class="trap-card-title">MRI 強磁場安全紅線：Zone IV 突發 VF 心跳停止急救與飛彈效應攔截</h3>
+                </div>
+                <span class="trap-badge badge-ethics">🚨 突發多重危機</span>
+            </div>
+            <div class="trap-card-body">
+                <div class="trap-details-column" style="grid-column: 1 / -1;">
+                    <div class="detail-block block-scene">
+                        <div class="block-label">📌 臨床情境劇本與現場脈絡</div>
+                        <p>病人在 3.0T 磁振造影掃描室（Zone IV）內突發心室顫動（VF）意識喪失。呼叫急救後，門外趕來支援的急診護理師與保全人員神情慌張，推著「一般非防磁鐵製急救推車、鐵製高壓氧氣鋼瓶與除顫器」正要直接衝進 MRI 檢查室救人！</p>
+                    </div>
+                    <div class="detail-block block-intent">
+                        <div class="block-label">🎯 考驗意圖與評審視角</div>
+                        <p>考驗環境安全絕對紅線意識（Environment Safety First）；在搶救生命的千鈞一髮之際，能否堅守磁場安全規範，防範致命「飛彈效應（Missile Effect）」砸死現場所有人，並熟悉強磁場急救標準動線。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點與錯誤應對</div>
+                        <ul>
+                            <li><strong>盲點一（致命意外）：</strong>救人心切，放任鐵製推車或鋼瓶進入 Zone IV（鐵瓶會瞬間以幾百公里時速吸向磁體中心，造成致命人員傷亡，為特大重大安全事故，直接判負）。</li>
+                            <li><strong>盲點二：</strong>嘗試在 MRI 掃描室（Zone IV）內直接貼片開啟除顫器放電（高頻磁場與射頻會引發電弧放電與嚴重皮膚灼傷，甚至誘發火災）。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-holistic-care">
+                        <div class="block-label">🌿 全人醫療（身心靈社）與 TRM 深度破解詳解</div>
+                        <ol>
+                            <li><strong>身 (環境安全超越一切)：</strong>沒有環境安全，就沒有病人安全！任何未經防磁標籤（MR Conditional/Safe）之金屬物體均為致命凶器。</li>
+                            <li><strong>TRM 工具 (Stop the Line 肉身擋門)：</strong>放射師必須以身體阻擋在 Zone IV 大門口，展開雙臂大聲喝止：「Stop！退後！絕對不能進來！」</li>
+                            <li><strong>標準急救轉移 SOP：</strong>MRI 突發心跳停止，<strong>唯一標準解法是「立即將病人手動拉出磁體，移至專用 MR 防磁推床，迅速推移出 Zone IV 到 Zone III（控制室／準備區），在 Zone III 安全區才開始壓胸、貼片電擊與使用急救車」</strong>！</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 標準示範對話與臨床話術檢核點</div>
+                        <div class="dialogue-bubble">
+                            <strong>放射師張大雙臂擋在大門大聲喊話（Stop the Line）：</strong><br>
+                            「<strong>Stop！大家全部停住！退後！急救車跟鐵鋼瓶絕對不能推進來！磁鐵會吸過去砸死人！全部在門外 Zone III 待命！</strong>」<br><br>
+                            <strong>放射師向內部同仁發動 Huddle：</strong><br>
+                            「同仁快！解開線圈，跟我一起把病患抬上 MR 專用推床，數到三推出去！一、二、三，推出去！」<br><br>
+                            <strong>推出至 Zone III 準備區後：</strong><br>
+                            「Call-Out！已安全抵達 Zone III！急救團隊接手！立即開始高品質胸外按壓！接上 AED 判讀心律！」
+                        </div>
+                    </div>
+                    <div class="detail-block block-eval">
+                        <div class="block-label">🏆 評審評分關鍵與防呆查核表</div>
+                        <ul>
+                            <li>[✓] 毫不猶豫肉身阻擋鐵製設備進入 Zone IV（落實 Stop the Line）。</li>
+                            <li>[✓] 熟記「不在 Zone IV 內電擊」之安全鐵律。</li>
+                            <li>[✓] 團隊迅速協同將病人安全轉移至 Zone III。</li>
+                            <li>[✓] 抵達安全區後無縫接軌高品質 CPR 與電擊處置。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- SCENARIO 06 -->
+        <article class="trap-card card-holistic" data-category="crisis" data-keywords="trauma code 重大創傷 雙病人 資源分配 擠壓 老人 防跌 同理 家屬 輪椅鎖死">
+            <div class="trap-card-header">
+                <div class="trap-title-wrap">
+                    <span class="badge-holistic">【全人與 TRM 06】</span>
+                    <h3 class="trap-card-title">雙病人衝突之多重重大創傷：Trauma Code 湧入擠壓常規排檢之動態資源分配</h3>
+                </div>
+                <span class="trap-badge badge-ethics">🚨 突發多重危機</span>
+            </div>
+            <div class="trap-card-body">
+                <div class="trap-details-column" style="grid-column: 1 / -1;">
+                    <div class="detail-block block-scene">
+                        <div class="block-label">📌 臨床情境劇本與現場脈絡</div>
+                        <p>X 光室內正有一位行動不便的高齡 85 歲中風爺爺（剛脫好外套、由家屬顫巍巍扶上立位檢查台準備照胸片）。突然門外急診推入一位重大車禍、全身大量出血、意識模糊呼吸衰竭的 22 歲青年（Trauma Code 綠色通道）。急診醫師與護理師大喊：「借過借過！這個血壓量不到快死掉了，先讓我們照骨盆跟胸部！」爺爺與陪伴的家屬受到強烈驚嚇，家屬生氣抗議：「我們掛號等了半小時，衣服都脫了，為什麼可以這樣硬插隊？！」</p>
+                    </div>
+                    <div class="detail-block block-intent">
+                        <div class="block-label">🎯 考驗意圖與評審視角</div>
+                        <p>考驗面對醫療資源擠壓、突發多重危機時的「動態資源調配（Dynamic Resource Allocation）」；能否妥善平衡創傷急救與常規病患的尊嚴、隱私、防跌與心理撫慰，避免顧此失彼。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點與錯誤應對</div>
+                        <ul>
+                            <li><strong>盲點一（棄置原病人）：</strong>為搶救車禍青年，全體人員瞬間一哄而散衝向急診推車，將中風老爺爺獨自丟在立位檢查台或無護欄推床上，導致老爺爺驚恐跌倒（常見雙病人重大違規）。</li>
+                            <li><strong>盲點二（態度粗暴）：</strong>對抗議的家屬態度冷血不耐煩：「沒看到有人快死了嗎？出去等啦！」（嚴重違反全人醫療精神，直接重扣分數）。</li>
+                            <li><strong>盲點三：</strong>場面混亂無指揮，雙方推車卡在走道互相推擠。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-holistic-care">
+                        <div class="block-label">🌿 全人醫療（身心靈社）與 TRM 深度破解詳解</div>
+                        <ol>
+                            <li><strong>身 (檢傷優先與防跌雙軌)：</strong>重大創傷瀕死具絕對醫療優先權；但原中風老人的防跌保護同等重要。</li>
+                            <li><strong>心與社 (同理溝通與資源共享)：</strong>主動向爺爺與家屬誠懇致歉並白話說明急迫性，取得諒解。</li>
+                            <li><strong>TRM 工具 (Leadership &amp; Huddle 動態分工)：</strong>Leader 放射師立即進行 5 秒動態人力拆分：「團隊分工！創傷優先，但絕不棄置爺爺！放射師 A 負責協助爺爺穿衣、移回輪椅推至隔壁休息室妥善陪伴；放射師 B 與我立即接手急診創傷拍攝！」</li>
+                            <li><strong>Closed-Loop 與暖心溝通：</strong>專人向家屬真摯說明並落實輪煞鎖定，達成創傷救命與常規關懷的完美兼顧。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 標準示範對話與臨床話術檢核點</div>
+                        <div class="dialogue-bubble">
+                            <strong>Leader 放射師下達分工指令（Brief / Huddle）：</strong><br>
+                            「放射師 A，請你立刻負責老先生的安全防跌與安撫；我與放射師 B 對接急診創傷團隊，清空機台動線！」<br><br>
+                            <strong>放射師 A 迅速拉起床欄扶持爺爺：</strong><br>
+                            「伯伯、家屬不好意思，您看這位年輕人車禍全身是血正在搶救，我們醫生需要先照一張救命。我現在幫您穿好衣服，扶您坐在舒適的輪椅上，輪子我幫您鎖緊，我全程在旁邊陪您，等一下優先為您完成，非常謝謝您的大愛體諒！」<br><br>
+                            <strong>創傷處置完畢後，放射師全員向爺爺致謝：</strong><br>
+                            「爺爺，剛才真的很感謝您的包容，讓那位年輕人及時送開刀房！現在請進，我們全心為您檢查！」
+                        </div>
+                    </div>
+                    <div class="detail-block block-eval">
+                        <div class="block-label">🏆 評審評分關鍵與防呆查核表</div>
+                        <ul>
+                            <li>[✓] 絕無單獨留置原高齡病患之違規。</li>
+                            <li>[✓] 明確發動 Huddle 進行人力動態分工。</li>
+                            <li>[✓] 展現極高 EQ 與人文素養安撫家屬，化解衝突。</li>
+                            <li>[✓] 創傷攝影流暢高效，兼顧檢傷倫理。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
         <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
@@ -1254,6 +1970,74 @@
                 groupCt.style.display = 'block';
                 cards.forEach(c => {
                     c.style.display = (c.dataset.category === 'ct') ? 'block' : 'none';
+                });
+            }
+        }
+
+        
+        // Module Switcher Logic
+        let currentModule = 'traps';
+
+        function switchModule(moduleName) {
+            currentModule = moduleName;
+            const btnTraps = document.getElementById('btn-mod-traps');
+            const btnHolistic = document.getElementById('btn-mod-holistic');
+            const subTraps = document.getElementById('sub-filters-traps');
+            const subHolistic = document.getElementById('sub-filters-holistic');
+            const sectionTraps = document.getElementById('section-traps');
+            const sectionHolistic = document.getElementById('section-holistic');
+
+            if (moduleName === 'traps') {
+                btnTraps.classList.add('active');
+                btnHolistic.classList.remove('active');
+                subTraps.style.display = 'flex';
+                subHolistic.style.display = 'none';
+                sectionTraps.style.display = 'block';
+                sectionHolistic.style.display = 'none';
+                document.getElementById('searchInput').placeholder = "搜尋陷阱關鍵字（如：右心症、氣胸、骨折、假牙、主動脈...）";
+            } else {
+                btnTraps.classList.remove('active');
+                btnHolistic.classList.add('active');
+                subTraps.style.display = 'none';
+                subHolistic.style.display = 'flex';
+                sectionTraps.style.display = 'none';
+                sectionHolistic.style.display = 'block';
+                document.getElementById('searchInput').placeholder = "搜尋全人與TRM關鍵字（如：eGFR、失智、懷孕、DNR、MRI、骨折...）";
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterHolistic(category, btn) {
+            const buttons = document.querySelectorAll('#sub-filters-holistic .btn-filter');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('#section-holistic .trap-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else if (card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function searchAll() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            
+            if (currentModule === 'traps') {
+                searchTraps();
+            } else {
+                const cards = document.querySelectorAll('#section-holistic .trap-card');
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase() + " " + (card.dataset.keywords || "");
+                    if (text.includes(query)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
             }
         }
