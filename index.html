@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醫事放射 13 大臨床高階陷阱題與實戰應變破解全指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #0F2035;
+            --secondary-blue: #1A5276;
+            --accent-cyan: #0284C7;
+            --accent-orange: #EA580C;
+            --accent-red: #DC2626;
+            --accent-green: #16A34A;
+            --accent-purple: #7C3AED;
+            --bg-page: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --border-light: #E2E8F0;
+            --radius-lg: 16px;
+            --shadow-card: 0 10px 25px -5px rgba(15, 32, 53, 0.08), 0 8px 10px -6px rgba(15, 32, 53, 0.04);
+            --shadow-hover: 0 20px 30px -10px rgba(15, 32, 53, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.75;
+            font-size: 17.5px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Header */
+        header.site-header {
+            background: linear-gradient(135deg, #0A192F 0%, #0F2035 50%, #16365C 100%);
+            color: #FFFFFF;
+            padding: 50px 24px 38px;
+            border-bottom: 4px solid var(--accent-cyan);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .badge-competition {
+            display: inline-block;
+            background: rgba(2, 132, 199, 0.2);
+            color: #38BDF8;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        h1.main-title {
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.35;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        p.subtitle {
+            font-size: 20px;
+            color: #CBD5E1;
+            max-width: 980px;
+            line-height: 1.6;
+        }
+
+        /* Sticky Filter & Nav Bar */
+        .nav-sticky-wrap {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            padding: 14px 24px;
+        }
+
+        .nav-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-filter {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1.5px solid var(--border-light);
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 16.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-filter:hover {
+            background: #E2E8F0;
+            color: var(--text-dark);
+        }
+
+        .btn-filter.active {
+            background: var(--primary-navy);
+            color: #FFFFFF;
+            border-color: var(--primary-navy);
+            box-shadow: 0 4px 10px rgba(15, 32, 53, 0.2);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 300px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 11px 18px 11px 44px;
+            font-size: 16.5px;
+            border: 1.5px solid var(--border-light);
+            border-radius: 10px;
+            outline: none;
+            background: #FFFFFF;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94A3B8;
+            font-size: 19px;
+            pointer-events: none;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1320px;
+            margin: 36px auto 60px;
+            padding: 0 24px;
+        }
+
+        /* Overview Banner Card */
+        .overview-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 34px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            border-left: 6px solid var(--accent-cyan);
+        }
+
+        .overview-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 22px;
+            margin-top: 22px;
+        }
+
+        .dimension-box {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .dimension-box h4 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .dim-1 h4 { color: #0369A1; }
+        .dim-2 h4 { color: #C2410C; }
+        .dim-3 h4 { color: #15803D; }
+
+        .dimension-box ul {
+            padding-left: 22px;
+            font-size: 16.5px;
+            color: var(--text-muted);
+        }
+
+        .dimension-box li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Title Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 55px 0 30px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .section-header h2 {
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--primary-navy);
+        }
+
+        .section-header .tag-count {
+            background: #E0F2FE;
+            color: #0369A1;
+            padding: 5px 16px;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        /* Trap Question Card */
+        .trap-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-card);
+            margin-bottom: 42px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .trap-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .trap-card-header {
+            background: linear-gradient(90deg, #0F2035 0%, #1A365D 100%);
+            color: #FFFFFF;
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .trap-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .trap-badge {
+            background: #F59E0B;
+            color: #78350F;
+            font-size: 15px;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .trap-badge.ct-badge {
+            background: #38BDF8;
+            color: #082F49;
+        }
+
+        .trap-card-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+
+        .trap-card-body {
+            padding: 34px 30px;
+        }
+
+        /* Two-Column Layout for Image Cards */
+        .card-split-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .card-split-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Detail Blocks */
+        .detail-block {
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin-bottom: 22px;
+            border: 1px solid transparent;
+        }
+
+        .detail-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .block-label {
+            font-size: 19px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        /* Scenario Block */
+        .block-scenario {
+            background: #FEF2F2;
+            border-color: #FEE2E2;
+            color: #991B1B;
+        }
+        .block-scenario .block-label { color: #DC2626; }
+        .block-scenario p { color: #450A0A; font-size: 17.5px; }
+
+        /* Pitfall Block */
+        .block-pitfall {
+            background: #FAF5FF;
+            border-color: #F3E8FF;
+            color: #581C87;
+        }
+        .block-pitfall .block-label { color: #7C3AED; }
+        .block-pitfall ul { padding-left: 24px; }
+        .block-pitfall li { color: #3B0764; margin-bottom: 8px; font-size: 17px; }
+
+        /* SOP Block */
+        .block-sop {
+            background: #F0FDF4;
+            border-color: #DCFCE7;
+            color: #14532D;
+        }
+        .block-sop .block-label { color: #16A34A; }
+        .block-sop ol { padding-left: 26px; }
+        .block-sop li { color: #052E16; margin-bottom: 12px; font-size: 17.5px; font-weight: 500; }
+        .block-sop li strong { color: #166534; font-weight: 800; }
+
+        /* Script / Dialogue Block */
+        .block-script {
+            background: #F0F9FF;
+            border-color: #E0F2FE;
+            color: #0C4A6E;
+        }
+        .block-script .block-label { color: #0284C7; }
+        .dialogue-bubble {
+            background: #FFFFFF;
+            border: 1.5px solid #BAE6FD;
+            border-left: 5px solid var(--accent-cyan);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 10px;
+            font-size: 17px;
+            color: #0369A1;
+            line-height: 1.7;
+        }
+
+        /* Image Display Section (Natural Aspect Ratio, No Distortion) */
+        .image-showcase {
+            background: #0B1727;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+            border: 1px solid #1E293B;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .zoom-hint {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.88);
+            color: #FFFFFF;
+            font-size: 13.5px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+        }
+
+        .image-caption {
+            color: #94A3B8;
+            font-size: 15.5px;
+            text-align: center;
+            margin-top: 14px;
+            font-weight: 500;
+            line-height: 1.55;
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.92);
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 95%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            color: #FFFFFF;
+            font-size: 38px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: var(--primary-navy);
+            color: #94A3B8;
+            padding: 44px 24px;
+            text-align: center;
+            border-top: 1px solid #1E293B;
+            font-size: 17px;
+        }
+
+        footer strong { color: #FFFFFF; }
+
+        @media (max-width: 768px) {
+            h1.main-title { font-size: 28px; }
+            .trap-card-title { font-size: 21px; }
+            .nav-inner { flex-direction: column; align-items: stretch; }
+            .search-box { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="badge-competition">醫策會情境模擬競賽 ｜ 醫事放射組考核備賽指南</div>
+            <h1 class="main-title">醫事放射 13 大臨床高階陷阱題與實戰應變破解全指南</h1>
+            <p class="subtitle">配備高解析臨床診斷影像（X 光與 CT 掃描），深入拆解鎖骨骨折、右心症、張力性氣胸、管路過深、假牙假影、管路外滲、主動脈剝離等關鍵考核題型，提供考官評核標準與標準 SOP 話術。</p>
+        </div>
+    </header>
+
+    <!-- Sticky Nav & Filter Bar -->
+    <nav class="nav-sticky-wrap">
+        <div class="nav-inner">
+            <div class="filter-buttons">
+                <button class="btn-filter active" onclick="filterCategory('all', this)">全部題型 (13)</button>
+                <button class="btn-filter" onclick="filterCategory('xray', this)">📷 一般 X 光篇 (7)</button>
+                <button class="btn-filter" onclick="filterCategory('ct', this)">🖥️ 電腦斷層 CT 篇 (6)</button>
+            </div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="搜尋陷阱關鍵字（如：右心症、氣胸、骨折、假牙、主動脈...）" oninput="searchTraps()">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Overview Card -->
+        <section class="overview-card">
+            <div class="overview-title">
+                <span>🎯</span> 考官命題核心思維：三大檢驗向度
+            </div>
+            <p style="font-size: 18px; color: var(--text-muted);">在情境模擬考核中，考官評分不僅看技術熟練度，更在於檢驗學員是否具備「防線意識」、「危急值感知」與「跨專業閉環溝通」。</p>
+            
+            <div class="dimensions-grid">
+                <div class="dimension-box dim-1">
+                    <h4>向度一：檢查前防線把關</h4>
+                    <ul>
+                        <li>徹底核對身分手圈（防範錯單與同名同姓）</li>
+                        <li>評估金屬假影、活動假牙、飾品與機能衣物</li>
+                        <li>查核腎功能指數（eGFR）與降血糖藥 Metformin</li>
+                        <li>高壓注射管路口徑與回血測試（拒絕手背 24G 軟針）</li>
+                    </ul>
+                </div>
+                <div class="dimension-box dim-2">
+                    <h4>向度二：影像秒級危急值感知</h4>
+                    <ul>
+                        <li>鎖骨骨折、多處肋骨骨折之即時通報與保護</li>
+                        <li>張力性氣胸／縱膈腔偏移之就地給氧與秒級報警</li>
+                        <li>氣管內管（ETT）過深誤入右支氣管之即時回拉提醒</li>
+                        <li>主動脈剝離（Stanford Type A）之緊急綠色通道啟動</li>
+                    </ul>
+                </div>
+                <div class="dimension-box dim-3">
+                    <h4>向度三：解剖變異與 TRM 防錯</h4>
+                    <ul>
+                        <li>心臟左右倒置（右心症）：嚴禁私自水平翻轉影像！</li>
+                        <li>左右側別醫囑矛盾：落實 Time-out 叫修確認</li>
+                        <li>防跌措施：高齡立位胸片防範重心不穩跌倒</li>
+                        <li>跨室交接：轉送前主動撥打電話落實 ISBAR 結構交接</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: X-RAY -->
+        <div class="section-group" id="group-xray">
+            <div class="section-header">
+                <h2>📷 一般 X 光室（General X-Ray）高階陷阱題</h2>
+                <span class="tag-count">共 7 題</span>
+            </div>
+
+            <!-- Trap 01: Clavicle Fracture -->
+            <article class="trap-card" data-category="xray" data-keywords="鎖骨 骨折 創傷 通報 危急值 clavicle fracture">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge">一般 X 光 01</span>
+                        <h3 class="trap-card-title">鎖骨骨折（Clavicle Fracture）即時辨識與急診通報</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考驗意圖</div>
+                                <p><strong>臨床情境：</strong>車禍外傷或摔倒病患照胸部／肩部 X 光，影像一產出，鎖骨中段可見明顯移位性骨折（Displaced Mid-shaft Fracture）。<br>
+                                <strong>考官意圖：</strong>考驗學員在照完影像那一刻，有沒有即刻檢視影像發現急性骨折，還是只看對比度合格就讓病人自己走回急診等報告。</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 學員常見扣分盲點</div>
+                                <ul>
+                                    <li><strong>盲點一：</strong>照完直接點選傳送 PACS，請病人自己走回急診候診區，完全沒有即時判讀骨折。</li>
+                                    <li><strong>盲點二：</strong>看見骨折但心想「反正急診醫師會看片」，未給予患肢固定保護，導致病人活動造成骨折移位惡化或刺破鎖骨下血管。</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 標準破解解法 SOP</div>
+                                <ol>
+                                    <li><strong>看台即時判讀：</strong>影像產出後立即在看台檢視鎖骨連續性，確認移位與骨折線，囑咐病人切勿隨意抬高或轉動患側上肢。</li>
+                                    <li><strong>患肢固定保護：</strong>主動提供懸臂帶（Sling）或協助病人托住患肢，避免二次傷害。</li>
+                                    <li><strong>主動電話 ISBAR 通報：</strong>立即致電急診醫師說明病況，完成交接。</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「急診醫師您好，我是 X 光室。剛剛拍攝的陳先生胸部 X 光，影像確認有<strong>右側鎖骨中段骨折移位</strong>。我們已先協助固定患側手肘並請病人平躺休息，請急診醫師接手評估處置。」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/clavicle_fracture.jpg')">
+                                    <img src="images/clavicle_fracture.jpg" alt="急性鎖骨骨折 X 光影像">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【胸部與肩關節 X 光】<br>清晰顯示右側鎖骨中段完全骨折且骨折斷端有重疊移位（Acute Mid-shaft Clavicle Fracture）。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 02: Dextrocardia -->
+            <article class="trap-card" data-category="xray" data-keywords="心臟 左右倒置 右心症 dextrocardia 翻轉 鉛字 標記 ekg">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge">一般 X 光 02</span>
+                        <h3 class="trap-card-title">心臟左右倒置（右心症 Dextrocardia）與應變處置</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考驗意圖</div>
+                                <p><strong>臨床情境：</strong>胸部 X 光照出來那一瞬間，心尖（Apex）朝向右側、主動脈弓在右邊、胃氣泡（Gastric Bubble）也跑到右側（全器官反位 / 右心症）。<br>
+                                <strong>考官意圖：</strong>考驗學員在「懷疑自己鉛字放錯」與「病人真實解剖變異」之間的批判性思考、床邊查證與醫療防錯意識！</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 學員最致命扣分盲點（嚴禁犯錯！）</div>
+                                <ul>
+                                    <li><strong>致命錯誤一（篡改影像）：</strong>以為自己標記貼錯，私自於操作台將影像「水平翻轉（Horizontal Flip）」硬改成心臟在左邊！這屬於嚴重竄改影像與重大醫療疏失！</li>
+                                    <li><strong>致命錯誤二（盲目重照）：</strong>未經病史查證，一口咬定自己照反，要求病人重照造成非必要輻射劑量。</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 五星級標準應變解法 SOP</div>
+                                <ol>
+                                    <li><strong>技術客觀查核：</strong>核對影像上的實體金屬鉛字（R / L Marker），確認當初確實貼在解剖右側，排除系統翻轉。</li>
+                                    <li><strong>床邊主動查證：</strong>親切詢問病人：「先生，請問過去有沒有醫師跟您提過，您的心臟長在右邊，或是內臟左右相反？」</li>
+                                    <li><strong>影像明確加註：</strong>於影像打上文字註記：「<strong>確認為右心症（Dextrocardia），已核對解剖右側無誤，非放錯標記或翻轉。</strong>」</li>
+                                    <li><strong>通報急診提醒反向貼 EKG：</strong>主動致電急診告知右心症，並提醒後續心電圖導聯需左右反向貼！</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「急診醫師您好，X 光室通報，剛照完的王先生為<strong>右心症（Dextrocardia）</strong>，已與病患確認解剖位置無誤，影像無翻轉。<strong>特別提醒後續若需做心電圖（EKG），導聯貼片需要左右反向貼！</strong>」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/dextrocardia.jpg')">
+                                    <img src="images/dextrocardia.jpg" alt="正常胸腔解剖 vs 右心症對照圖">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【胸部 X 光解剖對照圖】<br>左側為正常解剖；右側為典型右心症（Dextrocardia），心尖指向右胸，胃氣泡亦在右側。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 03: Tension Pneumothorax (With Image) -->
+            <article class="trap-card" data-category="xray" data-keywords="氣胸 張力性氣胸 縱膈腔 偏移 缺氧 抽吸 胸管 pneumothorax">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge">一般 X 光 03</span>
+                        <h3 class="trap-card-title">張力性氣胸（Tension Pneumothorax）秒級急救通報</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                                <p><strong>臨床情境：</strong>外傷或嚴重胸悶氣喘病患照立位胸片，影像顯示一側肺野完全黑掉且毫無肺紋，縱膈腔與氣管被巨大的肋膜腔張力推擠偏向對側健側。<br>
+                                <strong>考驗意圖：</strong>張力性氣胸屬於隨時會造成休克猝死的秒級致命危急值（Critical Value），考驗學員是否具備即刻辨識與就地搶救通報能力。</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 常見扣分盲點</div>
+                                <ul>
+                                    <li><strong>盲點一：</strong>將病人當作普通門診照完，讓病人自行走回診間，病人極可能在走廊直接休克猝死！</li>
+                                    <li><strong>盲點二：</strong>以為要等放射科醫師打正式報告才算數，未能在第一時間啟動急診危急值通報綠色通道。</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 標準破解解法 SOP</div>
+                                <ol>
+                                    <li><strong>限制活動與就地處置：</strong>立即禁止病人下床或走動，將床頭搖高 30–45 度，給予高濃度面罩氧氣（10–15 L/min）。</li>
+                                    <li><strong>秒級直通急救室通報：</strong>拿起電話直撥急診紅色緊急專線，請求攜帶胸管減壓設備至 X 光室搶救。</li>
+                                    <li><strong>陪同戒護至團隊接手：</strong>放射師全程在病人床邊監測意識與呼吸，直至急診醫師到場穿刺減壓。</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「急診急救室您好！我是 X 光室。剛剛拍攝的王先生有<strong>張力性氣胸，縱膈腔明顯向健側偏移</strong>！病人正在冒冷汗氣喘，已先給予高濃度氧氣，請急診醫師與急救團隊立刻攜帶胸管箱（Chest Tube）前來 X 光室處置！」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/tension_pneumo.jpg')">
+                                    <img src="images/tension_pneumo.jpg" alt="急性張力性氣胸 X 光影像">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【右側張力性氣胸 X 光】<br>右肺完全塌陷萎縮，右側肋膜腔無肺紋，氣管（Trachea）與心臟縱膈腔受壓明顯向左側偏移。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 04: ETT Deep Intubation (With Image) -->
+            <article class="trap-card" data-category="xray" data-keywords="氣管內管 插管 右主支氣管 肺塌陷 ett carina 隆突">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge">一般 X 光 04</span>
+                        <h3 class="trap-card-title">氣管內管（ETT）過深誤入右主支氣管之管路辨識</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                                <p><strong>臨床情境：</strong>急診剛插管推來照 CXR 確認位置，管子尖端明顯越過氣管隆突（Carina），直接掉入右主支氣管，導致左側整片肺葉無法通氣而塌陷萎縮（Atelectasis）。<br>
+                                <strong>考驗意圖：</strong>考驗放射師是否具備急重症侵入性管路（ETT / CVP / NG）之影像判讀能力，並及時給予臨床醫師修正建議。</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 常見扣分盲點</div>
+                                <ul>
+                                    <li><strong>盲點一：</strong>只看肺部骨骼，完全沒注意氣管內管深度，傳回急診造成左肺嚴重缺氧塌陷。</li>
+                                    <li><strong>盲點二：</strong>看到左肺白掉，誤以為是急性肺炎或血胸，未看出是管路插太深造成的阻塞性肺塌陷。</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 標準破解解法 SOP</div>
+                                <ol>
+                                    <li><strong>掌握 ETT 標準解剖位置：</strong>氣管內管尖端應位於氣管隆突（Carina）上方約 3–5 公分處（相當於第 2 至第 4 胸椎高度）。</li>
+                                    <li><strong>主動通報急診回拉管路：</strong>立即致電開單醫師建議回拉約 2–3 公分以利雙肺均勻換氣。</li>
+                                    <li><strong>追蹤確認：</strong>詢問醫師回拉後是否需要再照一張 Portable CXR 確認修正位置。</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「醫師您好，我是 X 光室。王先生的插管確認胸片顯示<strong>氣管內管尖端已深進右側主支氣管，左肺已有阻塞性塌陷</strong>，建議立即回拉管路約 2–3 公分以利雙側肺部通氣！」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/ett_intubation.jpg')">
+                                    <img src="images/ett_intubation.jpg" alt="氣管內管插管過深 X 光影像">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【氣管內管錯位 X 光】<br>白色管路尖端越過隆突（Carina）進入右主支氣管，導致左肺通氣不足完全白化塌陷（Left Lung Atelectasis）。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 05: Wrong Side Order -->
+            <article class="trap-card" data-category="xray" data-keywords="左右 相反 部位 錯誤 醫囑 叫修 time out wrong site">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge">一般 X 光 05</span>
+                        <h3 class="trap-card-title">左右側別相反（Wrong Side）醫囑矛盾與 Time-Out 攔截</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="detail-block block-scenario">
+                        <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                        <p><strong>臨床情境：</strong>檢查單上電腦醫囑開立「Right Knee X-ray（右膝）」，但病人由輪椅推入時，左膝包著厚彈性繃帶明顯腫脹，病人主訴：「我剛剛摔倒扭傷的是左腳啊！」<br>
+                        <strong>考驗意圖：</strong>考驗學員是盲目盲從醫囑開照，還是落實雙重核對與 TeamSTEPPS 兩次叫修原則（Two-Challenge Rule）。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點</div>
+                        <ul>
+                            <li><strong>致命盲點一（盲從醫囑）：</strong>不管病人主訴，看到單子寫右邊就照右膝，造成照錯部位重大醫療疏失！</li>
+                            <li><strong>致命盲點二（私自竄改）：</strong>未向醫師確認，擅自改照左邊，導致電腦計價、影像報告與原始醫囑部位不符。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-sop">
+                        <div class="block-label">✅ 標準破解解法 SOP</div>
+                        <ol>
+                            <li><strong>啟動暫停（Time-Out）：</strong>向病人說明暫停檢查，立刻幫其向急診醫師確認部位。</li>
+                            <li><strong>致電醫師修正醫囑：</strong>致電開單醫師說明病人受傷主訴在左側，請其更正系統醫囑。</li>
+                            <li><strong>醫囑修正後方可曝光：</strong>確認系統醫囑更正為 Left Knee 後，再執行左膝標準攝影。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 示範話術與通報檢核點</div>
+                        <div class="dialogue-bubble">
+                            「醫師您好，我是 X 光室放射師。您開立的王先生檢查單是右膝，但病人主訴外傷扭傷且紅腫在左膝，<strong>請問是否需協助將開單修改為左膝（Left Knee）？</strong>確認修改後我們再為病人開照。」
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 06: Fall Prevention -->
+            <article class="trap-card" data-category="xray" data-keywords="跌倒 防跌 站立不穩 輪椅 煞車 離身 fall">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge">一般 X 光 06</span>
+                        <h3 class="trap-card-title">立位胸片站立不穩・SP 企圖跌倒之防跌應變</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="detail-block block-scenario">
+                        <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                        <p><strong>臨床情境：</strong>高齡虛弱或急診發燒病人推入照胸片。學員將病人扶至站立架前站好，剛轉身走回鉛玻璃操作台時，標準化病人（SP）立刻膝蓋發軟、重心後傾企圖跌倒！<br>
+                        <strong>考驗意圖：</strong>這是醫策會競賽「扣分最多的重災區」！考驗學員是否具備跌倒高風險預判能力，以及是否有「人員離身」的安全疏失。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點</div>
+                        <ul>
+                            <li><strong>盲點一：</strong>未評估病人步態與體力，盲目要求虛弱病人站立照胸片（Chest PA）。</li>
+                            <li><strong>盲點二：</strong>放手讓病人自己站著，放射師直接走回鉛玻璃室背對病人，導致 SP 在背後倒地摔傷！</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-sop">
+                        <div class="block-label">✅ 標準破解解法 SOP</div>
+                        <ol>
+                            <li><strong>事前步態評估：</strong>見病人面色蒼白、步履闌珊時，主動判定為高跌倒風險，<strong>主動改為坐姿或臥位（Chest AP View）</strong>！</li>
+                            <li><strong>絕不離身扶持：</strong>若評估後可站立，必須有扶手雙側抓緊，放射師未確認安全前絕不貿然放手走開。</li>
+                            <li><strong>輪椅雙煞鎖死：</strong>移位前確認輪椅兩側煞車確實下壓鎖死，腳踏板翻起，全程口語叮嚀：「慢慢來，不要急！」</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 示範話術與通報檢核點</div>
+                        <div class="dialogue-bubble">
+                            「王先生您好，我看您今天身體比較虛弱、走路有點晃，<strong>為了您的安全，我們先不要勉強站著照，我們改坐著輪椅或躺在床上升起來照（Chest AP）</strong>，效果一樣很好而且很安全喔！」
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 07: Artifact & Clothing (With Image) -->
+            <article class="trap-card" data-category="xray" data-keywords="假影 衣服 排汗衣 銀離子 暖暖包 更衣 鋼圈 重複曝光 artifact">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge">一般 X 光 07</span>
+                        <h3 class="trap-card-title">機能排汗衣（金屬銀離子）／暖暖包隱藏假影與更衣防護</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                                <p><strong>臨床情境：</strong>冬天病人穿著普通素色排汗運動衫（內含金屬銀離子或高密度印刷），或女性內衣有鋼圈，口袋藏有冬天貼式暖暖包（高密度鐵粉）。<br>
+                                <strong>考驗意圖：</strong>考驗放射師是否落實「更衣確認」與「觸診/口頭提醒」，避免照出假影導致病人遭受非必要的重複輻射曝光。</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 常見扣分盲點</div>
+                                <ul>
+                                    <li><strong>盲點一：</strong>目視衣服看起來像棉質沒圖案，就偷懶沒請病人換檢查服，照出來胸壁一片大白影遮蔽肺紋，被考官扣輻射安全大分。</li>
+                                    <li><strong>盲點二：</strong>沒請病人把口袋掏空，暖暖包高密度白影被誤判為腹部異物或骨腫瘤。</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 標準破解解法 SOP</div>
+                                <ol>
+                                    <li><strong>嚴格落實更衣制度：</strong>只要照胸部、腹部或脊椎，一律確實引導病人換穿專用無金屬檢查服。</li>
+                                    <li><strong>口頭與目視再次查核：</strong>「請問胸前有沒有項鍊？口袋有沒有鑰匙、手機或暖暖包？女性內衣是否有鋼圈扣環？」</li>
+                                    <li><strong>假影排除再曝光：</strong>確認完全無金屬異物後方可按下曝光鍵，落實輻射防護 ALARA 原則。</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「小姐您好，因為現在很多排汗衫或保暖衣內含金屬纖維，即使肉眼看不出來也會在 X 光下形成大片白影，<strong>請您先至更衣室換上我們專用的檢查服，項鍊與胸罩也請先取下喔！</strong>」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/clothing_artifact.jpg')">
+                                    <img src="images/clothing_artifact.jpg" alt="暖暖包與衣物金屬假影 X 光">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【衣物與口袋異物假影 X 光】<br>左下腹口袋清晰可見長方形高密度鐵粉暖暖包白影；右肺亦可見合成金屬排汗紋路假影遮蔽肺紋。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- SECTION 2: CT -->
+        <div class="section-group" id="group-ct">
+            <div class="section-header">
+                <h2>🖥️ 電腦斷層室（CT）高階陷阱題</h2>
+                <span class="tag-count">共 6 題</span>
+            </div>
+
+            <!-- Trap 08: Head CT Dentures/Artifact -->
+            <article class="trap-card" data-category="ct" data-keywords="頭部 假牙 異物 放射狀 假影 streak artifact 髮夾 gantry">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge ct-badge">電腦斷層 08</span>
+                        <h3 class="trap-card-title">頭部 CT 假牙／金屬異物未取之放射狀假影（Streak Artifact）防範</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考驗意圖</div>
+                                <p><strong>臨床情境：</strong>急診頭暈或頭部外傷病人做 Brain CT，頭上沒戴帽子，但嘴巴裡戴著整副金屬活動假牙（Dentures），後腦杓別著金屬細黑髮夾。<br>
+                                <strong>考官意圖：</strong>考驗放射師在檢查前是否徹底巡查病人頭頸部異物，防止嚴重射線硬化假影遮蔽顱底致命病灶！</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 學員常見扣分盲點</div>
+                                <ul>
+                                    <li><strong>盲點一：</strong>只看病人頭髮沒戴大髮飾，忘記詢問口中有無「活動假牙」，掃描後口咽與後顱窩產生大片星芒狀假影（Streak Artifact）。</li>
+                                    <li><strong>盲點二：</strong>假影嚴重遮蔽小腦與腦幹，導致急性中風或顱底骨折無法判讀，整組掃描宣告無效重照！</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 標準破解解法 SOP</div>
+                                <ol>
+                                    <li><strong>頭頸口部三查核：</strong>主動開口詢問：「先生，請問嘴巴裡面有沒有活動假牙？頭上有沒有黑髮夾、耳環、鼻環或助聽器？」</li>
+                                    <li><strong>提供收納袋妥善保管：</strong>協助病人取下假牙與髮夾，放入專用假牙盒或塑膠袋交由家屬保管，避免遺失。</li>
+                                    <li><strong>傾斜機頭（Gantry Tilt）：</strong>若有固定金屬植牙無法拔除，適度調整 Gantry 角度避開牙床切面。</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「先生您好，等一下要做頭部電腦斷層。<strong>請問您嘴巴裡有沒有活動假牙？耳朵有沒有助聽器？頭上有沒有夾黑髮夾？</strong>金屬會產生很大的放射狀白影把腦部遮住，我們先幫您取下保管喔！」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/head_ct_artifact.jpg')">
+                                    <img src="images/head_ct_artifact.jpg" alt="頭部 CT 金屬假牙放射狀假影">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【頭部 CT 軸位掃描】<br>因金屬假牙未取下，右後顱窩產生強烈星芒放射狀假影（Severe Metal Streak Artifacts），嚴重遮蔽腦幹結構。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 09: IV Line Extravasation (With Image) -->
+            <article class="trap-card" data-category="ct" data-keywords="高壓 注射 管路 軟針 24g 顯影劑 外滲 extravasation 腔室症候群">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge ct-badge">電腦斷層 09</span>
+                        <h3 class="trap-card-title">顯影劑高壓注射管路地雷（24G 軟針手背外滲風險評估）</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                                <p><strong>臨床情境：</strong>排定胸部血管 CTA（需高速注射 3.5–4.0 mL/s），急診推來病人手背上僅留置脆弱的「24G 軟針」，且沖水時病人主訴局部有微脹緊繃感。<br>
+                                <strong>考驗意圖：</strong>考驗放射師是否具備高壓管路安全把關意識，能否堅守安全底線防範嚴重顯影劑外滲（Extravasation）與腔室症候群。</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 常見扣分盲點</div>
+                                <ul>
+                                    <li><strong>致命盲點一：</strong>貪圖方便直接接上高壓注射器開打，血管破裂導致 100mL 顯影劑全灌進皮下，造成手背組織缺血壞死！</li>
+                                    <li><strong>盲點二：</strong>僅憑眼睛看針孔沒流血，未用生理食鹽水實施高壓推注測試與觸診。</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 標準破解解法 SOP</div>
+                                <ol>
+                                    <li><strong>管路口徑嚴格檢核：</strong>高速血管造影（>3.0 mL/s）必須使用至少 20G 綠針，且位置需在前臂或肘窩（Antecubital fossa），禁止於關節或手背施打高速造影。</li>
+                                    <li><strong>生理食鹽水手推測試（Saline Test）：</strong>高壓注射前，以空針用力推注 10–20mL 生理食鹽水並觸摸血管局部，確認通暢、無回阻、無浮腫。</li>
+                                    <li><strong>勇於拒絕與要求重打：</strong>發現管路不符時，堅定致電急診護理師或親自重置 20G 適當管路。</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「急診護理師您好，我是 CT 室。王先生安排的是肺動脈 CTA，需要以 3.5 mL/s 高速施打顯影劑。<strong>病人目前手背上只有 24G 軟針且回抽阻力大，高壓注射有極高血管破裂外滲風險，需請急診協助於手肘或前臂重新施打一條 20G 綠針</strong>，謝謝配合！」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/contrast_extravasation.jpg')">
+                                    <img src="images/contrast_extravasation.jpg" alt="顯影劑外滲 CT 軸位與 3D 渲染圖">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【顯影劑嚴重外滲 CT 掃描】<br>左圖前臂軸位顯示皮下大量高密度對比劑積聚與肌肉腫脹；右圖 3D 渲染清晰呈現外溢範圍。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 10: Metformin & Renal Function -->
+            <article class="trap-card" data-category="ct" data-keywords="糖尿病 metformin 腎功能 egfr 乳酸中毒 顯影劑 停藥 48小時">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge ct-badge">電腦斷層 10</span>
+                        <h3 class="trap-card-title">糖尿病藥 Metformin 與中度腎損傷衝突（乳酸中毒風險攔截）</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="detail-block block-scenario">
+                        <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                        <p><strong>臨床情境：</strong>急診安排顯影劑腹部 CT，抽血報告 eGFR 為 38 mL/min（中重度腎功能不全），且學員核對病史時，病人表示：「我今天早上出門才剛吃一顆降血糖藥 Metformin（格魯克法）。」<br>
+                        <strong>考驗意圖：</strong>考驗放射師對含碘造影劑藥物交互作用的認知，是否能攔截高致死率（50%）的「乳酸中毒（Lactic Acidosis）」併發症。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點</div>
+                        <ul>
+                            <li><strong>盲點一：</strong>只看病人有沒有顯影劑過敏史，完全沒核對腎功能抽血指數（BUN/Creatinine/eGFR）。</li>
+                            <li><strong>盲點二：</strong>看到 eGFR < 45 且有吃 Metformin，依然直接施打顯影劑，造成藥物累積誘發急性腎衰竭與乳酸中毒。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-sop">
+                        <div class="block-label">✅ 標準破解解法 SOP</div>
+                        <ol>
+                            <li><strong>腎功能三讀五對查核：</strong>確認 eGFR < 45 mL/min 時提高警覺，主動詢問降血糖口服用藥品項。</li>
+                            <li><strong>立即暫緩檢查與通報：</strong>主動致電急診醫師通報，建議暫緩檢查或停藥 48 小時並加強水化。</li>
+                            <li><strong>完整衛教：</strong>告知病人與家屬檢查後需多喝水，並遵醫囑暫停 Metformin 服用 48 小時。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 示範話術與通報檢核點</div>
+                        <div class="dialogue-bubble">
+                            「急診醫師您好，我是 CT 室。王先生抽血 eGFR 僅有 38，且今晨剛服用過降血糖藥 Metformin。<strong>注射對比劑有誘發急性腎損傷及致死性乳酸中毒之高度風險</strong>，請問是否需先暫緩顯影劑檢查，或停用 Metformin 48 小時並加強點滴水化？」
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 11: Aortic Dissection Type A (With Image) -->
+            <article class="trap-card" data-category="ct" data-keywords="主動脈剝離 stanford type a cta 血管造影 綠色通道 心外 心包填塞">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge ct-badge">電腦斷層 11</span>
+                        <h3 class="trap-card-title">主動脈血管造影（CTA）突發 Stanford Type A 主動脈剝離秒級通報</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="card-split-layout">
+                        <div class="detail-column">
+                            <div class="detail-block block-scenario">
+                                <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                                <p><strong>臨床情境：</strong>胸痛病人做主動脈血管造影（Aortic CTA），掃描預覽重組影像赫然顯示升主動脈有巨大的內膜撕裂瓣（Intimal Flap，Stanford Type A），隨時可能心包膜填塞猝死！<br>
+                                <strong>考驗意圖：</strong>考驗放射師是否具備「關鍵重症影像敏銳度」，能否分秒必爭啟動急診與心臟外科緊急開刀綠色通道。</p>
+                            </div>
+                            <div class="detail-block block-pitfall">
+                                <div class="block-label">❌ 常見扣分盲點</div>
+                                <ul>
+                                    <li><strong>盲點一：</strong>以為只要把病人推回急診等報告就好，病人可能在推床等候電梯時主動脈破裂猝死！</li>
+                                    <li><strong>盲點二：</strong>放任病人自己坐起或走動，未嚴格監控血壓與生命徵象。</li>
+                                </ul>
+                            </div>
+                            <div class="detail-block block-sop">
+                                <div class="block-label">✅ 標準破解解法 SOP</div>
+                                <ol>
+                                    <li><strong>秒級危急值直通電話：</strong>看到 Type A 剝離第一時間，立刻撥打急診緊急電話啟動開刀綠色通道。</li>
+                                    <li><strong>維持絕對安靜臥床：</strong>安撫病人情緒平躺不要用力深呼吸，避免血壓驟升造成血管破裂。</li>
+                                    <li><strong>綠色通道無縫交接：</strong>由急診醫護與急救設備直接到 CT 室接手，無縫護送至開刀房。</li>
+                                </ol>
+                            </div>
+                            <div class="detail-block block-script">
+                                <div class="block-label">💬 示範話術與通報檢核點</div>
+                                <div class="dialogue-bubble">
+                                    「急診急救室！我是 CT 室。正在台上掃描的陳先生，CTA 影像確認為<strong>升主動脈 Stanford Type A 急性主動脈剝離</strong>！內膜撕裂範圍非常大，請急診醫師與心臟外科團隊立刻前來 CT 室接手，直接啟動緊急開刀綠色通道！」
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-showcase">
+                                <div class="image-wrapper" onclick="openLightbox('images/aortic_dissection.jpg')">
+                                    <img src="images/aortic_dissection.jpg" alt="Stanford Type A 急性主動脈剝離 CT 造影">
+                                    <span class="zoom-hint">🔍 點擊放大檢視</span>
+                                </div>
+                                <div class="image-caption">
+                                    【真實臨床胸部 CTA 軸位增強掃描】<br>上方紅色箭頭清晰指示<strong>升主動脈（Ascending Aorta）</strong>內的薄膜狀內膜撕裂瓣（Intimal Flap），清楚分隔真腔與假腔；下方箭頭指示撕裂延伸至降主動脈。確認為典型 Stanford Type A 急性主動脈剝離！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 12: Wrong Patient Handover -->
+            <article class="trap-card" data-category="ct" data-keywords="錯單 病人辨識 手環 三讀五對 傳送 跨室 攔截 wrong patient">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge ct-badge">電腦斷層 12</span>
+                        <h3 class="trap-card-title">多重檢查轉診夾帶他人錯單之三讀五對攔截防錯</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="detail-block block-scenario">
+                        <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                        <p><strong>臨床情境：</strong>傳送人員推病人入 CT 室，隨手遞上檢查單夾。檢查單上印的是「陳 OO、腦部 CT」，但病人手上佩戴的手環姓名卻是「王 OO」，排定的其實是腹部 CT！<br>
+                        <strong>考驗意圖：</strong>上屆醫策會競賽真實扣分考題！考驗學員在忙碌中是否會「只看單子不對人」，能否落實雙重身分核對與防錯攔截。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點</div>
+                        <ul>
+                            <li><strong>致命盲點一：</strong>拿到單子就直接叫病人躺上掃描床，按電腦預設開照，直接照錯病人且照錯部位，造成嚴重病人安全重大異常事件！</li>
+                            <li><strong>盲點二：</strong>只問「你是陳先生嗎？」，病人年老重聽隨口點頭應答，未落實開放式提問與手圈雙重辨識。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-sop">
+                        <div class="block-label">✅ 標準破解解法 SOP</div>
+                        <ol>
+                            <li><strong>開放式提問三讀五對：</strong>主動開口核對手圈：「先生您好，請教您的姓名？出生年月日是哪一年哪一月？」並對照手環條碼。</li>
+                            <li><strong>及時攔截並喊停檢查：</strong>發現檢查單與手環不同時，立即喊停：「等一下，這張單子是隔壁床陳先生的，病人是王先生，請傳送人員暫停更正！」</li>
+                            <li><strong>追回正確單據再進行：</strong>找回王先生正確檢查單，並通知傳送單位檢討交接流程，避免另一位病人也受害。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 示範話術與通報檢核點</div>
+                        <div class="dialogue-bubble">
+                            「傳送大哥請先等一下！這份檢查單姓名是陳先生做腦部 CT，<strong>但病人手圈是王先生，排的是腹部檢查，單子被錯夾了！</strong>我們現在先暫停檢查，請幫忙聯繫急診將正確的單據送過來，絕不能照錯病人！」
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Trap 13: Delayed Allergic Reaction -->
+            <article class="trap-card" data-category="ct" data-keywords="延遲過敏 蕁麻疹 呼吸喘 走廊 候診區 code blue epinephrine 腎上腺素">
+                <div class="trap-card-header">
+                    <div class="trap-title-wrap">
+                        <span class="trap-badge ct-badge">電腦斷層 13</span>
+                        <h3 class="trap-card-title">顯影劑延遲型過敏反應（出室後呼吸喘/蕁麻疹）走廊應變</h3>
+                    </div>
+                </div>
+                <div class="trap-card-body">
+                    <div class="detail-block block-scenario">
+                        <div class="block-label">⚠️ 陷阱情境與考題設計</div>
+                        <p><strong>臨床情境：</strong>CT 檢查順利完成，病人由家屬推至檢查室外候診區準備回急診。5 分鐘後家屬驚慌衝進門求救：「我先生全身長滿紅疹、脖子腫起來吸不到氣了！」<br>
+                        <strong>考驗意圖：</strong>考驗放射師在檢查室以外環境的突發急性重症應變能力、急救車調度與 TeamSTEPPS 互助支援能力。</p>
+                    </div>
+                    <div class="detail-block block-pitfall">
+                        <div class="block-label">❌ 常見扣分盲點</div>
+                        <ul>
+                            <li><strong>盲點一：</strong>以為病人已經出檢查室就「不關放射師的事」，叫家屬自己推回急診，延誤喉頭水腫窒息搶救黃金時間！</li>
+                            <li><strong>盲點二：</strong>在走廊慌張無措，忘記啟動 Code Blue 與調用檢查室門口的急救車氧氣設備。</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block block-sop">
+                        <div class="block-label">✅ 標準破解解法 SOP</div>
+                        <ol>
+                            <li><strong>立即衝出評估與維持氣道：</strong>放射師立刻帶氧氣瓶衝出，評估呼吸道（Stridor 喘鳴音），給予高濃度面罩氧氣。</li>
+                            <li><strong>啟動院內急救廣播：</strong>立即按下急救鈕或廣播 Code Blue 急救團隊支援，並備妥急救車中 Epinephrine（腎上腺素 1:1000）。</li>
+                            <li><strong>跨團隊協同救治：</strong>安撫焦慮家屬，協助醫師快速建立靜脈管路給藥，全程守護直至生命徵象穩定。</li>
+                        </ol>
+                    </div>
+                    <div class="detail-block block-script">
+                        <div class="block-label">💬 示範話術與通報檢核點</div>
+                        <div class="dialogue-bubble">
+                            「走廊 Code Blue！CT 候診區病人突發顯影劑重度過敏休克！阿宏請幫我推急救車跟氧氣筒出來，我先維持氣道！家屬請不要慌，我們醫護人員已經在急救，醫師馬上就到！」
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="放大檢視">
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="header-inner">
+            <p><strong>醫策會情境模擬競賽 ｜ 醫事放射組高階考題評核手冊</strong></p>
+            <p style="margin-top: 8px;">心法口訣：多問一句（病史）｜ 多看一眼（影像）｜ 多停一秒（防錯）｜ 閉環通報（ISBAR）</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        function filterCategory(category, btn) {
+            document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const groupXray = document.getElementById('group-xray');
+            const groupCt = document.getElementById('group-ct');
+            const cards = document.querySelectorAll('.trap-card');
+
+            if (category === 'all') {
+                groupXray.style.display = 'block';
+                groupCt.style.display = 'block';
+                cards.forEach(c => c.style.display = 'block');
+            } else if (category === 'xray') {
+                groupXray.style.display = 'block';
+                groupCt.style.display = 'none';
+                cards.forEach(c => {
+                    c.style.display = (c.dataset.category === 'xray') ? 'block' : 'none';
+                });
+            } else if (category === 'ct') {
+                groupXray.style.display = 'none';
+                groupCt.style.display = 'block';
+                cards.forEach(c => {
+                    c.style.display = (c.dataset.category === 'ct') ? 'block' : 'none';
+                });
+            }
+        }
+
+        function searchTraps() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const cards = document.querySelectorAll('.trap-card');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase() + " " + (card.dataset.keywords || "");
+                if (text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const groupXray = document.getElementById('group-xray');
+            const groupCt = document.getElementById('group-ct');
+            
+            const xrayVisible = Array.from(groupXray.querySelectorAll('.trap-card')).some(c => c.style.display !== 'none');
+            const ctVisible = Array.from(groupCt.querySelectorAll('.trap-card')).some(c => c.style.display !== 'none');
+
+            groupXray.style.display = xrayVisible ? 'block' : 'none';
+            groupCt.style.display = ctVisible ? 'block' : 'none';
+        }
+
+        // Lightbox Functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
