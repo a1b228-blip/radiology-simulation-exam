@@ -846,6 +846,834 @@
             .nav-inner { flex-direction: column; align-items: stretch; }
             .search-box { min-width: 100%; }
         }
+
+        /* Briefing Module Specific Styles */
+        .btn-module.btn-briefing {
+            border-color: #A5B4FC;
+            background: #EEF2FF;
+            color: #312E81;
+        }
+
+        .btn-module.btn-briefing:hover {
+            background: #E0E7FF;
+            border-color: #6366F1;
+        }
+
+        .btn-module.active.btn-briefing {
+            background: linear-gradient(135deg, #1E1B4B 0%, #3730A3 50%, #4338CA 100%);
+            border-color: #6366F1;
+            color: #FFFFFF;
+            box-shadow: 0 4px 16px rgba(67, 56, 202, 0.35);
+        }
+
+        .briefing-hero {
+            background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 45%, #312E81 100%);
+            color: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 38px 40px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .briefing-hero::after {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .briefing-hero h2 {
+            font-size: 33px;
+            font-weight: 900;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .briefing-hero p {
+            font-size: 19px;
+            color: #E0E7FF;
+            line-height: 1.75;
+            max-width: 1120px;
+        }
+
+        .briefing-stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-top: 26px;
+        }
+
+        .briefing-stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 18px 22px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .stat-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .stat-text .stat-num {
+            font-size: 21px;
+            font-weight: 900;
+            color: #FBBF24;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-text .stat-desc {
+            font-size: 14.5px;
+            color: #C7D2FE;
+            font-weight: 500;
+        }
+
+        /* Briefing Card Container */
+        .briefing-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-card);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .briefing-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .briefing-card-header {
+            background: linear-gradient(90deg, #1E1B4B 0%, #312E81 60%, #4338CA 100%);
+            color: #FFFFFF;
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .briefing-card-title {
+            font-size: 26px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .briefing-card-body {
+            padding: 34px 32px;
+        }
+
+        /* Space Layout Showcase */
+        .space-layout-wrapper {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .space-layout-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .space-card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .space-zone-box {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-left: 6px solid var(--accent-cyan);
+            border-radius: 12px;
+            padding: 20px 22px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .space-zone-box:hover {
+            transform: translateX(4px);
+            border-color: #CBD5E1;
+        }
+
+        .space-zone-box.zone-ct { border-left-color: #0284C7; }
+        .space-zone-box.zone-xray { border-left-color: #EA580C; }
+        .space-zone-box.zone-obs { border-left-color: #16A34A; }
+        .space-zone-box.zone-hall { border-left-color: #7C3AED; }
+
+        .space-zone-title {
+            font-size: 19.5px;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .space-zone-badge {
+            font-size: 13.5px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 999px;
+        }
+
+        .badge-ct { background: #E0F2FE; color: #0369A1; }
+        .badge-xray { background: #FFEDD5; color: #C2410C; }
+        .badge-obs { background: #DCFCE7; color: #15803D; }
+        .badge-hall { background: #F3E8FF; color: #6B21A8; }
+
+        .space-zone-desc {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .space-zone-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .space-tag {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Roles & Team Setup */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .role-card {
+            background: #F8FAFC;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 14px;
+            padding: 24px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .role-card:hover {
+            border-color: #818CF8;
+            background: #FFFFFF;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.1);
+        }
+
+        .role-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .role-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: #EEF2FF;
+            color: #4338CA;
+            font-weight: 900;
+        }
+
+        .role-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-navy);
+        }
+
+        .role-subtitle {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #4F46E5;
+        }
+
+        .role-responsibilities {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+
+        .role-responsibilities li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .role-responsibilities li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #4338CA;
+            font-weight: 900;
+        }
+
+        /* Characters / Actors in Exam */
+        .actor-box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .actor-box {
+            background: #FFFFFF;
+            border: 2px solid #E0E7FF;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+        }
+
+        .actor-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #312E81;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Competition Flow Timeline */
+        .competition-timeline {
+            position: relative;
+            padding-left: 36px;
+            margin-top: 24px;
+        }
+
+        .competition-timeline::before {
+            content: "";
+            position: absolute;
+            left: 14px;
+            top: 10px;
+            bottom: 10px;
+            width: 4px;
+            background: linear-gradient(180deg, #6366F1 0%, #0284C7 50%, #10B981 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -36px;
+            top: 4px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 4px solid #4338CA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.2);
+            font-size: 12px;
+            font-weight: 900;
+            color: #4338CA;
+        }
+
+        .timeline-content-card {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 22px 26px;
+            transition: all 0.2s ease;
+        }
+
+        .timeline-content-card:hover {
+            background: #FFFFFF;
+            border-color: #CBD5E1;
+            box-shadow: 0 4px 16px rgba(15, 32, 53, 0.06);
+        }
+
+        .timeline-time-badge {
+            display: inline-block;
+            background: #EEF2FF;
+            color: #3730A3;
+            font-weight: 800;
+            font-size: 14.5px;
+            padding: 4px 14px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-heading {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+        }
+
+        .timeline-dual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-dual-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .timeline-room-box {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 15.5px;
+        }
+
+        .timeline-room-box.room-ct { border-top: 4px solid #0284C7; }
+        .timeline-room-box.room-xray { border-top: 4px solid #EA580C; }
+
+        /* Debriefing Q&A Box */
+        .qa-card {
+            background: #FFFBEB;
+            border: 1.5px solid #FDE68A;
+            border-radius: 14px;
+            padding: 24px 26px;
+            margin-top: 18px;
+        }
+
+        .qa-question {
+            font-size: 19px;
+            font-weight: 800;
+            color: #92400E;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qa-answer {
+            font-size: 16.5px;
+            color: #78350F;
+            line-height: 1.75;
+        }
+
+        /* Action Jump Banner */
+        .action-banner-jump {
+            background: linear-gradient(135deg, #0F2035 0%, #1A365D 100%);
+            border-radius: 16px;
+            padding: 30px 36px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(15, 32, 53, 0.15);
+        }
+
+        .action-jump-text h3 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .action-jump-text p {
+            font-size: 16.5px;
+            color: #94A3B8;
+        }
+
+        .action-jump-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn-large {
+            background: #0284C7;
+            color: #FFFFFF;
+            border: none;
+            padding: 13px 26px;
+            border-radius: 10px;
+            font-size: 17.5px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .action-btn-large:hover {
+            background: #0369A1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
+        }
+
+        .action-btn-large.btn-green {
+            background: #16A34A;
+        }
+
+        .action-btn-large.btn-green:hover {
+            background: #15803D;
+            box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4);
+        }
+
+        /* Lesson Module Specific Styles */
+        .btn-module.btn-lesson {
+            border-color: #F0ABFC;
+            background: #FDF4FF;
+            color: #701A75;
+        }
+
+        .btn-module.btn-lesson:hover {
+            background: #FAE8FF;
+            border-color: #D946EF;
+        }
+
+        .btn-module.active.btn-lesson {
+            background: linear-gradient(135deg, #4A044E 0%, #701A75 50%, #86198F 100%);
+            border-color: #C026D3;
+            color: #FFFFFF;
+            box-shadow: 0 4px 16px rgba(134, 25, 143, 0.35);
+        }
+
+        .lesson-hero {
+            background: linear-gradient(135deg, #2E1065 0%, #4A044E 50%, #701A75 100%);
+            color: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 38px 40px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-hero::after {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(232, 121, 249, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .lesson-hero h2 {
+            font-size: 33px;
+            font-weight: 900;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .lesson-hero p {
+            font-size: 19px;
+            color: #F5D0FE;
+            line-height: 1.75;
+            max-width: 1120px;
+        }
+
+        .lesson-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .lesson-card:hover {
+            box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12);
+        }
+
+        .lesson-header {
+            background: linear-gradient(135deg, #FAFAFA 0%, #F3F4F6 100%);
+            border-bottom: 2px solid #E5E7EB;
+            padding: 26px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .lesson-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lesson-badge-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            background: #FDF4FF;
+            border: 2px solid #F0ABFC;
+        }
+
+        .lesson-header-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--primary-navy);
+            letter-spacing: -0.3px;
+        }
+
+        .lesson-header-sub {
+            font-size: 15.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .lesson-body {
+            padding: 32px;
+        }
+
+        .lesson-section-box {
+            background: #F8FAFC;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 14px;
+            padding: 24px 26px;
+            margin-bottom: 26px;
+        }
+
+        .lesson-sec-title {
+            font-size: 21px;
+            font-weight: 900;
+            color: #1E1B4B;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 10px;
+        }
+
+        .lesson-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .lesson-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .lesson-info-item {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 16px 18px;
+        }
+
+        .lesson-info-label {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748B;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lesson-info-val {
+            font-size: 16.5px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Checklist Styles */
+        .event-card {
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 12px;
+            margin-bottom: 22px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .event-card-header {
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+            border-bottom: 1.5px solid #C7D2FE;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .event-title {
+            font-size: 18.5px;
+            font-weight: 900;
+            color: #312E81;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .event-objectives {
+            background: #FFFFFF;
+            padding: 12px 20px;
+            border-bottom: 1px dashed #CBD5E1;
+            font-size: 15.5px;
+            color: #475569;
+        }
+
+        .checklist-group {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .check-item:hover {
+            background: #F1F5F9;
+            border-color: #CBD5E1;
+        }
+
+        .check-item input[type="checkbox"] {
+            margin-top: 4px;
+            width: 20px;
+            height: 20px;
+            accent-color: #16A34A;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .check-item.checked {
+            background: #F0FDF4;
+            border-color: #86EFAC;
+        }
+
+        .check-item-text {
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text-dark);
+            flex-grow: 1;
+        }
+
+        .check-item.checked .check-item-text {
+            color: #166534;
+        }
+
+        .dialogue-quote {
+            background: #F0F9FF;
+            border-left: 4px solid #0284C7;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin: 8px 0;
+            font-size: 15.5px;
+            color: #0C4A6E;
+            font-style: normal;
+        }
+
+        /* Actor Table */
+        .actor-sim-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+
+        .actor-sim-table th {
+            background: #1E1B4B;
+            color: #FFFFFF;
+            text-align: left;
+            padding: 14px 18px;
+            font-size: 16.5px;
+            font-weight: 800;
+        }
+
+        .actor-sim-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #E2E8F0;
+            font-size: 16px;
+            line-height: 1.65;
+            vertical-align: top;
+        }
+
+        .actor-sim-table tr:nth-child(even) {
+            background: #F8FAFC;
+        }
+
+        .actor-sim-table tr:last-child td {
+            border-bottom: none;
+        }
+
     </style>
 </head>
 <body>
@@ -863,14 +1691,25 @@
     <nav class="nav-sticky-wrap">
         <div class="nav-inner">
             <div class="module-switcher">
-                <button id="btn-mod-traps" class="btn-module active" onclick="switchModule('traps')">
+                <button id="btn-mod-briefing" class="btn-module btn-briefing active" onclick="switchModule('briefing')">
+                    📋 考前說明（場地空間與競賽流程）
+                </button>
+                <button id="btn-mod-traps" class="btn-module" onclick="switchModule('traps')">
                     🎯 臨床高階陷阱題 (14)
                 </button>
                 <button id="btn-mod-holistic" class="btn-module btn-holistic" onclick="switchModule('holistic')">
                     🌿 全人醫療與TRM 專區 (6大情境與心法)
                 </button>
+                <button id="btn-mod-lesson" class="btn-module btn-lesson" onclick="switchModule('lesson')">
+                    📑 情境模擬教案 (2大實戰教案)
+                </button>
             </div>
-            <div id="sub-filters-traps" class="filter-buttons">
+            <div id="sub-filters-briefing" class="filter-buttons">
+                <button class="btn-filter active" onclick="filterBriefing('all', this)">全部說明</button>
+                <button class="btn-filter" onclick="filterBriefing('space', this)">🏢 3D 考場空間與設備</button>
+                <button class="btn-filter" onclick="filterBriefing('process', this)">🎮 如何玩・競賽規則與角色</button>
+            </div>
+            <div id="sub-filters-traps" class="filter-buttons" style="display: none;">
                 <button class="btn-filter active" onclick="filterCategory('all', this)">全部陷阱題 (14)</button>
                 <button class="btn-filter" onclick="filterCategory('xray', this)">📷 一般 X 光篇 (7)</button>
                 <button class="btn-filter" onclick="filterCategory('ct', this)">🖥️ 電腦斷層 CT 篇 (7)</button>
@@ -881,14 +1720,219 @@
                 <button class="btn-filter" onclick="filterHolistic('vulnerable', this)">🤝 弱勢同理與心理</button>
                 <button class="btn-filter" onclick="filterHolistic('crisis', this)">🚨 突發多重危機</button>
             </div>
+            <div id="sub-filters-lesson" class="filter-buttons" style="display: none;">
+                <button class="btn-filter active" onclick="filterLesson('all', this)">全部教案 (2)</button>
+                <button class="btn-filter" onclick="filterLesson('ct', this)">🖥️ CT 檢查突發低血糖處置</button>
+                <button class="btn-filter" onclick="filterLesson('xray', this)">📷 X 光室急救（過敏休克與 VF）</button>
+            </div>
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="搜尋關鍵字（如：eGFR、失智、懷孕、DNR、MRI、骨折、氣胸...）" oninput="searchAll()">
+                <input type="text" id="searchInput" class="search-input" placeholder="搜尋考前說明（如：空間配置、CT 室、X 光室、留觀室、如何玩、標準病人、模擬假人...）" oninput="searchAll()">
             </div>
         </div>
     </nav>
 
-    <div id="section-traps" class="container">
+    <!-- SECTION: BRIEFING (考前說明) -->
+    <div id="section-briefing" class="container">
+        
+        <!-- Briefing Hero Card -->
+        <section class="briefing-hero briefing-block" data-category="all" data-keywords="競賽目的 核心思維 團隊資源管理 TRM 考前說明 醫策會 考場說明">
+            <h2><span>🎯</span> 10 月情境模擬競賽・考前全面戰略說明</h2>
+            <p><strong>競賽核心設計思維：</strong>從單純的放射技術操作，全面提升為<strong>多病人、多任務情境下的團隊資源管理（TRM）</strong>、<strong>跨團隊溝通協作</strong>與<strong>系統性危機應變能力</strong>，並以落實<strong>病人安全</strong>與<strong>以人為中心的照護</strong>為最高考量標準。</p>
+            
+            <div class="briefing-stats-row">
+                <div class="briefing-stat-box">
+                    <span class="stat-icon">👥</span>
+                    <div class="stat-text">
+                        <span class="stat-num">四人一隊</span>
+                        <span class="stat-desc">3 位放射師 ＋ 1 位護理師</span>
+                    </div>
+                </div>
+                <div class="briefing-stat-box">
+                    <span class="stat-icon">🏢</span>
+                    <div class="stat-text">
+                        <span class="stat-num">雙考場連通</span>
+                        <span class="stat-desc">CT 室 ＋ X 光室 ＋ 留觀室</span>
+                    </div>
+                </div>
+                <div class="briefing-stat-box">
+                    <span class="stat-icon">🎭</span>
+                    <div class="stat-text">
+                        <span class="stat-num">高擬真角色</span>
+                        <span class="stat-desc">數名考官 ＋ 1 標準病人 ＋ 1 模擬假人</span>
+                    </div>
+                </div>
+                <div class="briefing-stat-box">
+                    <span class="stat-icon">⏱️</span>
+                    <div class="stat-text">
+                        <span class="stat-num">雙階段考核</span>
+                        <span class="stat-desc">實戰演練 ＋ 3 分鐘的團隊回饋</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOCK 1: Space 3D Layout -->
+        <article class="briefing-card briefing-block" data-category="space" data-keywords="考場空間 3D空間 示意圖 CT室 X光室 留觀室 走廊 設備 急救車 AED 血糖機 生理監視器 病床">
+            <div class="briefing-card-header">
+                <div class="briefing-card-title">
+                    <span>🏢</span> 考場 3D 空間配置與動線規劃示意
+                </div>
+                <span class="trap-badge" style="background: #E0E7FF; color: #3730A3;">空間維度</span>
+            </div>
+            <div class="briefing-card-body">
+                <div class="space-layout-wrapper">
+                    <!-- Image Column -->
+                    <div class="image-showcase" style="background: #0F172A;">
+                        <div class="image-wrapper" onclick="openLightbox('images/simulation_space_layout.png')">
+                            <img src="images/simulation_space_layout.png" alt="10月情境模擬比賽 考場 3D 空間純景圖">
+                            <span class="zoom-hint">🔍 點擊放大檢視 3D 考場全景</span>
+                        </div>
+                        <p class="image-caption" style="color: #CBD5E1; margin-top: 14px; text-align: center; font-size: 15.5px;">
+                            <strong>圖：10 月情境模擬競賽考場 3D 空間配置純景圖</strong><br>
+                            涵蓋電腦斷層室（CT 室）、X 光攝影室與留觀室三大主要空間。
+                        </p>
+                    </div>
+
+                    <!-- Spatial Details Column -->
+                    <div class="space-card-list">
+                        <!-- CT Room -->
+                        <div class="space-zone-box zone-ct">
+                            <div class="space-zone-title">
+                                <span>🖥️ 電腦斷層室（CT 室）</span>
+                                <span class="space-zone-badge badge-ct">標準病人 (SP)</span>
+                            </div>
+                            <div style="background: #E0F2FE; border-left: 4px solid #0284C7; padding: 10px 14px; border-radius: 6px; margin: 10px 0 12px; font-weight: 700; color: #0C4A6E; font-size: 16.5px;">
+                                📍 現場情境：一位標準病人在電腦斷層剛完成打顯影劑檢查
+                            </div>
+                            <p class="space-zone-desc">
+                                <strong>場地佈置：</strong>CT 圖案牆面布幕、一般醫院病床代用為檢查台。
+                            </p>
+                            <div class="space-zone-items">
+                                <span class="space-tag">🚨 急救車</span>
+                                <span class="space-tag">⚡ 電擊器 (AED)</span>
+                                <span class="space-tag">🩸 血糖機 (Accu-Chek)</span>
+                                <span class="space-tag">📊 生理監視器</span>
+                                <span class="space-tag">🩺 血壓/血氧機</span>
+                                <span class="space-tag">♿ 病患輪椅</span>
+                            </div>
+                        </div>
+
+                        <!-- X-Ray Room -->
+                        <div class="space-zone-box zone-xray">
+                            <div class="space-zone-title">
+                                <span>📷 一般 X 光攝影室（X-ray 室）</span>
+                                <span class="space-zone-badge badge-xray">模擬假人 (Manikin)</span>
+                            </div>
+                            <div style="background: #FFEDD5; border-left: 4px solid #EA580C; padding: 10px 14px; border-radius: 6px; margin: 10px 0 12px; font-weight: 700; color: #7C2D12; font-size: 16.5px;">
+                                📍 現場情境：模擬假人因胸痛與腹痛等待照相（chest AP + chest decubitus）
+                            </div>
+                            <p class="space-zone-desc">
+                                <strong>場地佈置：</strong>X 光機圖案布幕、一般醫院病床代用檢查台、立姿 Bucky 板、病床攝影區域。
+                            </p>
+                            <div class="space-zone-items">
+                                <span class="space-tag">🩻 立姿 Bucky 板</span>
+                                <span class="space-tag">🛏️ 病床攝影區域</span>
+                                <span class="space-tag">🛡️ 輻射防護鉛衣</span>
+                                <span class="space-tag">📋 病人核對卡</span>
+                            </div>
+                        </div>
+
+                        <!-- Observation Room -->
+                        <div class="space-zone-box zone-obs">
+                            <div class="space-zone-title">
+                                <span>🛏️ 留觀室（Observation Room）</span>
+                                <span class="space-zone-badge badge-obs">生命徵象監測</span>
+                            </div>
+                            <p class="space-zone-desc">
+                                <strong>場地佈置：</strong>留觀床位與生命徵象監測區域。
+                            </p>
+                            <div class="space-zone-items">
+                                <span class="space-tag">🩺 血壓機</span>
+                                <span class="space-tag">💓 血氧機</span>
+                                <span class="space-tag">📈 連續生理監視器</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- BLOCK 2: How to Play & Exam Rules -->
+        <article class="briefing-card briefing-block" data-category="process" data-keywords="如何玩 競賽過程 放射師 護理師 考官 模擬假人 標準病人 規則">
+            <div class="briefing-card-header">
+                <div class="briefing-card-title">
+                    <span>🎮</span> 如何玩？競賽進行規則與角色剖析
+                </div>
+                <span class="trap-badge" style="background: #FEF3C7; color: #92400E;">規則與角色</span>
+            </div>
+            <div class="briefing-card-body">
+                
+                <!-- Rule Highlight Quote from Slide 5 -->
+                <div style="background: #EEF2FF; border-left: 6px solid #4F46E5; border-radius: 10px; padding: 22px 24px; margin-bottom: 24px;">
+                    <div style="font-size: 20px; font-weight: 800; color: #312E81; margin-bottom: 8px;">
+                        📢 醫策會競賽原汁原味核心規則（引自簡報第 5 頁）
+                    </div>
+                    <ul style="font-size: 17.5px; color: #1E1B4B; padding-left: 24px; line-height: 1.8;">
+                        <li><strong>參賽隊伍配置：</strong>四人一隊（三位放射師、一位護理師）。</li>
+                        <li><strong>考場動態人物：</strong>比賽中有數名考官、一位模擬假人、一位標準病人（SP）。</li>
+                        <li><strong>臨場應變心法：</strong>靠著各大醫院的智慧寶庫，應對眼前五花八門的臨床狀況！</li>
+                        <li><strong>結尾回饋機制：</strong>最後三分鐘團隊回饋（Debriefing）與考官現場問答。</li>
+                    </ul>
+                </div>
+
+                <!-- Actors in Scene -->
+                <h3 style="font-size: 22px; font-weight: 800; color: var(--primary-navy); margin: 20px 0 16px;">
+                    🎭 考場三大關鍵角色與考官職能
+                </h3>
+                <div class="actor-box-grid">
+                    <div class="actor-box">
+                        <div class="actor-title">📋 數名現場考官（Judges）</div>
+                        <p style="font-size: 16px; color: var(--text-muted); line-height: 1.65;">
+                            考官全程在場不干預臨床流程，手持行為檢核清單（Checklist）嚴格記錄隊員的<strong>病人辨識</strong>、<strong>無菌與輻射防護</strong>、<strong>危急值察覺</strong>、<strong>Call-Out 大聲通報</strong>、<strong>閉環溝通 (Check-Back)</strong> 與<strong>跨室資源協調 (Huddle)</strong>。
+                        </p>
+                    </div>
+                    <div class="actor-box">
+                        <div class="actor-title">🧍‍♂️ 標準病人（Standardized Patient, SP）</div>
+                        <p style="font-size: 16px; color: var(--text-muted); line-height: 1.65;">
+                            受過嚴格擬真訓練的真人演員。模擬剛打完顯影劑的糖尿病患，現場逼真演繹飢餓感、頭暈、冒冷汗、發抖；轉室後更會演繹氣促、喘鳴、發癢等急性過敏症狀，考驗學員同理心與病患照護。
+                        </p>
+                    </div>
+                    <div class="actor-box">
+                        <div class="actor-title">🤖 高擬真模擬假人（Manikin）</div>
+                        <p style="font-size: 16px; color: var(--text-muted); line-height: 1.65;">
+                            高科技生理監測假人。能配合呈現胸痛腹痛檢查體位，並在指定時間點模擬意識喪失、呼吸停止、頸動脈搏動消失，以及監視器突發<strong>致死性心室顫動 (VF)</strong> 心律，考驗電擊與高品質 CPR。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Action Jump Banner -->
+        <div class="action-banner-jump">
+            <div class="action-jump-text">
+                <h3>準備好進入臨床實戰應變演練了嗎？</h3>
+                <p>已掌握考場 3D 空間配置與競賽進行規則，接著進入 14 大臨床陷阱題與全人醫療專區進行深度演練！</p>
+            </div>
+            <div class="action-jump-buttons">
+                <button class="action-btn-large" onclick="switchModule('traps')">
+                    🎯 前往 14 大臨床高階陷阱題 ➔
+                </button>
+                <button class="action-btn-large btn-green" onclick="switchModule('holistic')">
+                    🌿 前往 全人醫療與 TRM 專區 ➔
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="section-traps" class="container" style="display: none;">
+        <!-- Quick Reminder Banner -->
+        <div style="background: #EEF2FF; border: 1.5px solid #C7D2FE; border-radius: 12px; padding: 14px 22px; margin-bottom: 26px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div><strong style="color: #312E81;">💡 考前提醒：</strong><span style="color: #4338CA;">初次閱讀建議先查看考場 3D 空間配置與四人應戰競賽流程！</span></div>
+            <button onclick="switchModule('briefing')" style="background: #4338CA; color: #FFF; border: none; padding: 8px 18px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 15px;">📋 查看考前說明</button>
+        </div>
 
         <!-- Overview Card -->
         <section class="overview-card">
@@ -2124,6 +3168,775 @@
         </article>
     </section>
 
+    <!-- SECTION: LESSON SIMULATION (情境模擬教案) -->
+    <section id="section-lesson" class="container" style="display: none;">
+
+        <!-- Lesson Hero Card -->
+        <div class="lesson-hero">
+            <h2><span>📑</span> 醫事放射情境模擬訓練師資培育工作坊・情境模擬教案</h2>
+            <p><strong>教案核心目標：</strong>本專區收錄醫策會競賽級雙考場標準化情境模擬教案（CT 檢查室 ＋ 一般 X 光攝影室），深度結合<strong>病人辨識三讀五對</strong>、<strong>急症鑑別診斷（顯影劑過敏 vs 空腹低血糖）</strong>、<strong>跨室防跌交接（ISBAR）</strong>、<strong>突發心室顫動 (VF) 啟動 Code Blue</strong> 與<strong>高品質 CPR / 200J 去顫電擊</strong>。提供完整的<strong>核心推演檢核表</strong>（支援即時互動打勾）與<strong>標準化病人 (SP) / 模擬假人演出設定指引</strong>，供臨床師資教學與學員實戰推演使用。</p>
+            
+            <div class="briefing-stats-row" style="margin-top: 24px;">
+                <div class="briefing-stat-box" style="background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25);">
+                    <span class="stat-icon">🏥</span>
+                    <div class="stat-text">
+                        <span class="stat-num" style="color: #FFFFFF;">雙考場模組</span>
+                        <span class="stat-desc" style="color: #F5D0FE;">CT 檢查室 ＋ 一般 X 光攝影室</span>
+                    </div>
+                </div>
+                <div class="briefing-stat-box" style="background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25);">
+                    <span class="stat-icon">🎯</span>
+                    <div class="stat-text">
+                        <span class="stat-num" style="color: #FFFFFF;">9 大關鍵事件</span>
+                        <span class="stat-desc" style="color: #F5D0FE;">涵蓋檢查前、急變期與交班回饋</span>
+                    </div>
+                </div>
+                <div class="briefing-stat-box" style="background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25);">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-text">
+                        <span class="stat-num" style="color: #FFFFFF;">互動式檢核</span>
+                        <span class="stat-desc" style="color: #F5D0FE;">線上點擊即時勾選過關狀態</span>
+                    </div>
+                </div>
+                <div class="briefing-stat-box" style="background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25);">
+                    <span class="stat-icon">🎭</span>
+                    <div class="stat-text">
+                        <span class="stat-num" style="color: #FFFFFF;">擬真演出指引</span>
+                        <span class="stat-desc" style="color: #F5D0FE;">SP 症狀台詞 ＋ 假人生理調控</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LESSON PLAN 1: CT -->
+        <article class="lesson-card" data-category="ct" data-keywords="CT 檢查 低血糖處置 放射診斷組 胸部電腦斷層 chest ct 42 mg/dl d50w isbar 防跌 床欄 sp 標準化病人 糖尿病">
+            <div class="lesson-header">
+                <div class="lesson-header-left">
+                    <div class="lesson-badge-icon" style="background: #E0F2FE; border-color: #38BDF8;">🖥️</div>
+                    <div>
+                        <div class="lesson-header-title">教案一：CT 檢查突發低血糖急症處置</div>
+                        <div class="lesson-header-sub">組別／組名：放射診斷組（CT 檢查室）｜ 適用對象：新進放射師 / PGY 放射師</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="trap-badge" style="background: #E0F2FE; color: #0369A1;">🖥️ 電腦斷層</span>
+                    <span class="trap-badge" style="background: #FEF3C7; color: #92400E;">🩸 空腹低血糖急症</span>
+                    <span class="trap-badge" style="background: #FEE2E2; color: #991B1B;">📉 血糖危急值 42 mg/dL</span>
+                    <span class="trap-badge" style="background: #DCFCE7; color: #166534;">🛡️ 防跌床欄未離身</span>
+                    <span class="trap-badge" style="background: #F3E8FF; color: #6B21A8;">📞 ISBAR 跨室交接</span>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                
+                <!-- 壹、教案核心架構 -->
+                <div class="lesson-section-box">
+                    <div class="lesson-sec-title">
+                        <span>壹、</span> 教案核心架構 (Core Framework)
+                    </div>
+
+                    <div class="lesson-grid-2">
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">👨‍⚕️ 學習對象與角色</div>
+                            <div class="lesson-info-val">
+                                <strong>醫事放射師學員</strong>（新進放射師 / PGY 放射師）
+                            </div>
+                        </div>
+
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">📚 課前準備與先備能力</div>
+                            <ul style="padding-left: 20px; font-size: 15.5px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>熟悉胸部電腦斷層（Chest CT with contrast）作業流程。</li>
+                                <li>具備基礎生命徵象判讀與低血糖急症辨識能力（冒冷汗、手抖、血糖測量）。</li>
+                                <li>熟練防跌標準作業程序（輪椅煞車、床欄固定、人員扶持）。</li>
+                                <li>熟悉 TeamSTEPPS / TRM 溝通工具，能熟練運用 ISBAR 進行跨單位與通報醫師。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lesson-info-item" style="margin-top: 16px;">
+                        <div class="lesson-info-label">🎯 學習目標 (Learning Objectives)</div>
+                        <ol style="padding-left: 22px; font-size: 16px; color: var(--text-dark); line-height: 1.75; margin-top: 6px;">
+                            <li><strong>落實檢查前評估：</strong>能落實病人身分三讀五對、糖尿病病史與禁食時間評估。</li>
+                            <li><strong>低血糖急症辨識：</strong>能敏銳辨識低血糖急症徵候（手抖、冒冷汗、頭暈），並即時完成血糖量測 (42 mg/dL)。</li>
+                            <li><strong>維護病人安全防跌：</strong>能落實防跌措施（鎖輪椅、拉床欄、專人扶持未離身）。</li>
+                            <li><strong>跨專業結構化溝通：</strong>能運用 ISBAR 結構化通報醫師，並於轉送 X 光室前主動電話交接。</li>
+                        </ol>
+                    </div>
+
+                    <div class="lesson-info-item" style="margin-top: 16px; background: #FFFBEB; border-color: #FDE68A;">
+                        <div class="lesson-info-label" style="color: #B45309;">📖 臨床情境大綱 (Scenario Narrative)</div>
+                        <p style="font-size: 16.5px; color: #78350F; line-height: 1.8; margin-top: 6px;">
+                            56 歲男性王先生，因突發胸悶與活動性氣促至急診室就醫，急診醫師為釐清病因開立 <strong>Chest CT with contrast</strong> 檢查。病人由家屬陪同以輪椅推入電腦斷層檢查室，過去有第二型糖尿病與高血壓病史，自述因急診等候檢查已長時間未進食，精神略顯疲憊。放射師需於檢查室接手病人，完成常規查核評估後執行檢查。
+                        </p>
+                    </div>
+
+                    <div class="lesson-info-item" style="margin-top: 16px;">
+                        <div class="lesson-info-label">👥 師資角色與分工 (Faculty Roles)</div>
+                        <div class="lesson-grid-2" style="margin-top: 8px;">
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>🧍‍♂️ 標準化病人（SP）一名：</strong>飾演王先生。配合演繹疲憊、低血糖手抖冒汗與下床跌倒動作。
+                            </div>
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>👩‍👧 陪同家屬一名：</strong>飾演王先生家屬。焦急質疑「是不是顯影劑過敏休克？」，考驗學員安撫能力。
+                            </div>
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>🥼 受訓放射師一名：</strong>學員本人。負責接案、三讀五對、檢查執行、急症鑑別、防跌與 ISBAR 通報。
+                            </div>
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>🩺 急診醫師一名：</strong>接聽通報並到場處置，開立葡萄糖（D50W）醫囑並驗證閉環確認（Closed-Loop）。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 貳、教案附錄（器材與資源需求） -->
+                <div class="lesson-section-box">
+                    <div class="lesson-sec-title">
+                        <span>貳、</span> 教案附錄（器材與資源需求）
+                    </div>
+                    <div class="lesson-grid-3">
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">🏥 環境需求</div>
+                            <ul style="padding-left: 18px; font-size: 15px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>CT 檢查室與操作台</li>
+                                <li>急救車（含急救藥品模組）</li>
+                                <li>輪椅（含煞車）、檢查病床（含雙側護欄）</li>
+                                <li>氧氣給予設備、抽吸設備 (Suction)</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">💻 科技與教具輔助</div>
+                            <ul style="padding-left: 18px; font-size: 15px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>CT 模擬操作面板</li>
+                                <li>生理監視器 (Vital Sign Monitor)</li>
+                                <li>血糖機（顯示 42 mg/dL 危急值）</li>
+                                <li>院內分機通訊電話</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">🎭 人員與演出輔助</div>
+                            <ul style="padding-left: 18px; font-size: 15px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>標準化病人（SP 具備噴霧冒冷汗道具）</li>
+                                <li>家屬演員（擬真焦急情緒反饋）</li>
+                                <li>急診處置醫師演出人員</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 參、教案起始狀態與核心推演檢核表 -->
+                <div class="lesson-section-box" style="background: #FFFFFF; border-color: #CBD5E1;">
+                    <div class="lesson-sec-title">
+                        <span>參、</span> 教案起始狀態與核心推演檢核表（點擊方框可即時打勾評核）
+                    </div>
+
+                    <div style="background: #EEF2FF; border-left: 5px solid #4F46E5; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;">
+                        <strong style="color: #312E81; font-size: 16.5px;">【教案起始狀態與題幹 (Starting States and Stem)】</strong>
+                        <p style="font-size: 16px; color: #1E1B4B; margin-top: 6px; line-height: 1.7;">
+                            56 歲男性王先生因胸悶至急診就醫，醫師開立胸部電腦斷層對比劑檢查。病人由家屬陪同進入 CT 檢查室，表示有慢性糖尿病史且尚未進食。放射師需進行檢查前常規評估並執行檢查。
+                        </p>
+                    </div>
+
+                    <!-- CRITICAL EVENT 1 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件一：</span> 病人進入 CT 室與檢查前評估
+                            </div>
+                            <span class="trap-badge" style="background: #E0E7FF; color: #3730A3;">檢查前把關</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>落實身分三讀五對 ｜ 評估顯影劑過敏史與禁食病史 ｜ 說明檢查注意事項與熱感
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 核對雙重身分：</strong>放射師主動核對病人手圈與檢查單，開口詢問：
+                                    <div class="dialogue-quote">
+                                        「先生您好，我是今天的放射師，先跟您核對基本資料，請問您的姓名與出生年月日？」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 詢問顯影劑過敏史：</strong>放射師主動詢問：
+                                    <div class="dialogue-quote">
+                                        「醫師安排胸部電腦斷層需要打顯影劑，請問之前有沒有做過顯影劑檢查？有沒有顯影劑過敏或氣喘病史？」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 確認病史與禁食狀況：</strong>放射師詢問：
+                                    <div class="dialogue-quote">
+                                        「請問有糖尿病等慢性病嗎？今天有吃早餐或任何東西嗎？」（病人回覆：有糖尿病，等檢查都還沒吃）
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 衛教與回報說明：</strong>放射師清楚說明處置感受：
+                                    <div class="dialogue-quote">
+                                        「等一下藥水打進去身體會有溫熱感，這是正常的；如果過程中有任何不舒服或發癢，請立刻告訴我。」
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL EVENT 2 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件二：</span> 檢查中突發空腹低血糖急變處置
+                            </div>
+                            <span class="trap-badge" style="background: #FEF3C7; color: #92400E;">低血糖急症處置</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>敏銳察覺低血糖急症 ｜ 立即暫停檢查入室探視 ｜ 評估血壓與 SpO2 ｜ 成功採血量測血糖值 (42 mg/dL)
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 敏銳察覺低血糖不適：</strong>病人於掃描檯上出現頭暈、極度虛弱、冒冷汗與雙手顫抖，主訴：「放射師……我好餓好暈、全身在發抖……」，放射師透過對講機即時關切察覺異常：
+                                    <div class="dialogue-quote">
+                                        「王先生，您聽得到我說話嗎？是不是感覺很暈、冒冷汗？請放輕鬆不要亂動，我馬上進去！」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 立即暫停檢查入室探視：</strong>放射師毫不延遲立即按下暫停鍵中斷掃描，迅速進入掃描室來到床邊，評估病患神智狀態並安撫病人。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 安撫家屬並說明低血糖原因：</strong>家屬焦急質疑「他怎麼突然抖成這樣？」，放射師能冷靜專業安撫說明：
+                                    <div class="dialogue-quote">
+                                        「請家屬先別慌，先生因檢查前長時間空腹，目前的冒冷汗與手抖極可能是低血糖症狀，我現在立刻幫他評估生命徵象與採血驗血糖。」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 評估生命徵象（量測血壓與 SpO2）：</strong>放射師迅速為病患夾上血氧飽和度夾監測 SpO2，並壓脈帶量測血壓與心跳，即時掌握基礎生命徵象（血壓 98/58 mmHg、心跳 112 bpm、SpO2 97%），評估呼吸與循環灌流狀態。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 成功採血量測血糖 (42 mg/dL)：</strong>放射師敏銳判定低血糖，立即拿取血糖機為病人採血量測，成功判讀血糖值為 42 mg/dL（嚴重低血糖危急值）。
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL EVENT 3 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件三：</span> 防跌應變與醫師 ISBAR 通報
+                            </div>
+                            <span class="trap-badge" style="background: #FEE2E2; color: #991B1B;">安全防跌 & ISBAR</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>落實防跌措施（床欄拉起、專人未離身） ｜ 依 ISBAR 結構化通報醫師 ｜ 配合給予處置與閉環溝通
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 落實防跌措施：</strong>病人因頭暈掙扎企圖坐起下床時，放射師立即雙手扶持安撫阻止：「王先生請先躺好不要下床，深呼吸！」，並確實拉起兩側床欄鎖妥（若在輪椅上則鎖妥雙側煞車），人員未離身。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 運用 ISBAR 通報急診醫師：</strong>放射師撥打電話通報：
+                                    <div class="dialogue-quote">
+                                        <strong>• S（現況）：</strong>「醫師您好，我是 CT 室放射師，急診王先生檢查中突發頭暈不適。」<br>
+                                        <strong>• B（背景）：</strong>「56 歲男性，做 Chest CT，有糖尿病，等檢查尚未進食。」<br>
+                                        <strong>• A（評估）：</strong>「病人冒冷汗手抖，剛量血壓 98/58 mmHg、心跳 112、SpO2 97%，測血糖只有 42 mg/dL，判定為嚴重低血糖。」<br>
+                                        <strong>• R（建議）：</strong>「已拉床欄防跌，請醫師至 CT 室協助評估與處置。」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 閉環確認醫囑：</strong>醫師到場指示給予高濃度葡萄糖（D50W）或糖水時，放射師大聲完整複誦確認（Closed-Loop）。
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL EVENT 4 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件四：</span> 跨室主動交接（轉送 X 光室前）
+                            </div>
+                            <span class="trap-badge" style="background: #DCFCE7; color: #166534;">跨單位交班</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>主動落實跨室資訊同步 ｜ 提醒後續單位低血糖與跌倒風險
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 主動電話通報：</strong>於傳送人員推離 CT 室前，放射師主動拿起電話撥打至一般 X 光攝影室。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 精準結構化交接防跌：</strong>電話中清楚交接：
+                                    <div class="dialogue-quote">
+                                        「X 光室您好，我是 CT 室。等一下會推過去一位急診王先生照胸部 X 光。特別交接：病人剛剛在 CT 室發生嚴重低血糖（血糖 42）與冒汗頭暈，剛打完葡萄糖，請特別注意病人有高跌倒風險，檢查時請務必全程扶持並鎖妥輪椅煞車！」
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 肆、模擬假人／演員演出設定指引 -->
+                <div class="lesson-section-box">
+                    <div class="lesson-sec-title">
+                        <span>肆、</span> 模擬假人／演員演出設定指引 (Actor & Simulator Guidelines)
+                    </div>
+
+                    <table class="actor-sim-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">誘發條件／時間點</th>
+                                <th style="width: 75%;">演員（SP）／假人之情境演出反應與台詞</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>進室評估期</strong></td>
+                                <td>病人疲憊但配合回答姓名生日。主訴：<span style="color: #0284C7; font-weight: 700;">「護理師叫我不要吃東西，等好久好餓好渴。」</span>家屬補充：<span style="color: #4B5563; font-weight: 700;">「他有糖尿病平時有吃藥。」</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>檢查中低血糖發作</strong></td>
+                                <td>病人突然呼吸急促、冒冷汗（噴水霧道具）、雙手顫抖。聲音虛弱：<span style="color: #B91C1C; font-weight: 700;">「放射師……我好餓、頭好暈、眼前一片黑、全身都在發抖……」</span>家屬焦急站起：<span style="color: #DC2626; font-weight: 700;">「他怎麼突然抖成這樣？！」</span>病人並試圖掀被下床（<strong>若人員離身且未拉床欄，SP 側傾企圖跌倒以測試學員防跌敏銳度</strong>）。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>量測與給藥後</strong></td>
+                                <td>配合量測血壓、SpO2 與採血驗血糖（血壓 98/58 mmHg、SpO2 97%、血糖機顯示 42 mg/dL）。給予葡萄糖或糖水後表情緩和：<span style="color: #15803D; font-weight: 700;">「感覺頭比較不暈了，手也不發抖了。」</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>跨室轉送交接期</strong></td>
+                                <td>生命徵象回穩，由傳送人員推往一般 X 光攝影室，放射師主動以電話向 X 光室落實防跌與低血糖病史交班。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- LESSON PLAN 2: X-RAY -->
+        <article class="lesson-card" data-category="xray" data-keywords="X光室 病人辨識 顯影劑急性過敏 突發心室顫動急救 VF Code Blue CPR 去顫電擊 200J Clear 錯單 攔截 陳OO 王先生 隱私尊嚴 被單 放射診斷組">
+            <div class="lesson-header">
+                <div class="lesson-header-left">
+                    <div class="lesson-badge-icon" style="background: #FFEDD5; border-color: #FB923C;">📷</div>
+                    <div>
+                        <div class="lesson-header-title">教案二：X 光室病人辨識、顯影劑急性過敏與突發心室顫動急救</div>
+                        <div class="lesson-header-sub">組別／組名：放射診斷組（一般 X 光攝影室）｜ 適用對象：新進放射師 / 2–4 年資淺放射師</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="trap-badge" style="background: #FFEDD5; color: #C2410C;">📷 一般 X 光</span>
+                    <span class="trap-badge" style="background: #FEE2E2; color: #991B1B;">🚫 錯單及時攔截</span>
+                    <span class="trap-badge" style="background: #FEF3C7; color: #92400E;">🚨 CT 轉入急性過敏休克</span>
+                    <span class="trap-badge" style="background: #FEE2E2; color: #991B1B;">⚡ 突發致死性 VF</span>
+                    <span class="trap-badge" style="background: #DCFCE7; color: #166534;">🫀 高品質 CPR (中斷&lt;10秒)</span>
+                    <span class="trap-badge" style="background: #FEF3C7; color: #92400E;">⚡ 200J 去顫電擊 Clear</span>
+                    <span class="trap-badge" style="background: #E0E7FF; color: #3730A3;">🛡️ 隱私尊嚴被單覆蓋</span>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                
+                <!-- 壹、教案核心架構 -->
+                <div class="lesson-section-box">
+                    <div class="lesson-sec-title">
+                        <span>壹、</span> 教案核心架構 (Core Framework)
+                    </div>
+
+                    <div class="lesson-grid-2">
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">👨‍⚕️ 學習對象與角色</div>
+                            <div class="lesson-info-val">
+                                <strong>醫事放射師學員</strong>（新進放射師 / 2–4 年資淺放射師）
+                            </div>
+                        </div>
+
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">📚 課前準備與先備能力</div>
+                            <ul style="padding-left: 20px; font-size: 15.5px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>熟悉一般胸部 X 光攝影流程與病人辨識防錯機制。</li>
+                                <li>熟悉顯影劑急性過敏反應急救處理流程（給氧、維持呼吸道、配合 Epinephrine 給藥）。</li>
+                                <li>具備 BLS / ACLS 急救能力（胸外按壓 CPR、去顫電擊器操作）。</li>
+                                <li>具備 TeamSTEPPS 團隊資源管理觀念（啟動 Code Blue、呼叫隔壁跨室支援、Closed-loop 溝通）。</li>
+                                <li>具備病人安全與全人醫療倫理概念（身體遮蔽保暖、維護隱私尊嚴）。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lesson-info-item" style="margin-top: 16px;">
+                        <div class="lesson-info-label">🎯 學習目標 (Learning Objectives)</div>
+                        <ol style="padding-left: 22px; font-size: 16px; color: var(--text-dark); line-height: 1.75; margin-top: 6px;">
+                            <li><strong>落實三讀五對：</strong>能落實三讀五對，及時攔截夾帶之錯誤檢查單（陳 OO vs 王先生）。</li>
+                            <li><strong>辨識顯影劑過敏與即時處置：</strong>能敏銳辨識自 CT 室轉入病人之嚴重顯影劑過敏休克（喘鳴、全身風疹、意識不清），立即給予高流量氧氣並維持呼吸道通暢。</li>
+                            <li><strong>秒級辨識意識脈搏與啟動急救：</strong>能於病人突發意識喪失時，迅速評估呼吸脈搏（&lt;10秒），啟動院內 Code Blue 並跨室呼叫隔壁 CT 放射師攜帶急救車、AED 與 Epinephrine 支援。</li>
+                            <li><strong>高品質 CPR 與安全電擊：</strong>能執行高品質 CPR（中斷 &lt; 10 秒）與正確去顫電擊（200J、大喊 Clear）。</li>
+                            <li><strong>全人關懷與完整交接：</strong>能在急救中維護病人隱私尊嚴（蓋妥被單），並依 ISBAR 向急救團隊完整交接顯影劑過敏、VF 與電擊歷程。</li>
+                        </ol>
+                    </div>
+
+                    <div class="lesson-info-item" style="margin-top: 16px; background: #FFFBEB; border-color: #FDE68A;">
+                        <div class="lesson-info-label" style="color: #B45309;">📖 臨床情境大綱 (Scenario Narrative)</div>
+                        <p style="font-size: 16.5px; color: #78350F; line-height: 1.8; margin-top: 6px;">
+                            急診病人剛於電腦斷層室完成顯影劑檢查後，由傳送人員以輪椅推入一般 X 光攝影室，準備執行臥位胸部 X 光攝影。傳送人員交接單據後離去。病人移床過程中突發呼吸急促喘鳴、全身風疹發癢與顯影劑嚴重過敏性休克，隨後突發意識喪失與呼吸心跳驟停。放射師需在檢查室內緊急辨識過敏休克、給氧、啟動 Code Blue、呼叫跨室支援、執行高品質 CPR 與去顫電擊。
+                        </p>
+                    </div>
+
+                    <div class="lesson-info-item" style="margin-top: 16px;">
+                        <div class="lesson-info-label">👥 師資角色與分工 (Faculty Roles)</div>
+                        <div class="lesson-grid-2" style="margin-top: 8px;">
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>🚪 傳送人員演員一名：</strong>推病人入室交接單張，隨車夾帶錯誤單據（測試學員辨識手圈能力）。
+                            </div>
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>🤖 高擬真假人（Simulator）：</strong>受控演繹生理急變（雙眼閉合、突發 VF、頸動脈無脈搏、電擊後 ROSC）。
+                            </div>
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>🥼 受訓放射師一（主責學員）：</strong>負責接案、辨識錯單、攝影、辨識 VF、跳上床壓胸與指揮。
+                            </div>
+                            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                <strong>🥼 協同放射師二（隔壁 CT 室支援學員）：</strong>攜帶急救器材跨室支援，協助接手胸外按壓（換手中斷 &lt; 10 秒）。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 貳、教案附錄（器材與資源需求） -->
+                <div class="lesson-section-box">
+                    <div class="lesson-sec-title">
+                        <span>貳、</span> 教案附錄（器材與資源需求）
+                    </div>
+                    <div class="lesson-grid-3">
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">🏥 環境需求</div>
+                            <ul style="padding-left: 18px; font-size: 15px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>一般 X 光檢查室、檢查床</li>
+                                <li>輪椅（含雙側煞車）</li>
+                                <li>急救車（含急救藥品模組與 Epinephrine 腎上腺素）</li>
+                                <li>去顫器（含成人電極貼片）</li>
+                                <li>高流量氧氣設備（NR-mask 面罩 10–15 L/min）</li>
+                                <li>保暖被單（隱私維護用）</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">💻 科技與教具輔助</div>
+                            <ul style="padding-left: 18px; font-size: 15px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>高擬真假人（監測按壓深度 5-6cm、頻率 100-120bpm、VF 心電圖）</li>
+                                <li>室內急救鈴／全院廣播系統 (Code Blue)</li>
+                                <li>雙向對講通話系統</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-info-item">
+                            <div class="lesson-info-label">🎭 人員與演出輔助</div>
+                            <ul style="padding-left: 18px; font-size: 15px; color: var(--text-dark); line-height: 1.7; margin-top: 4px;">
+                                <li>傳送人員演員（推錯單）</li>
+                                <li>隔壁 CT 室跨室奔援學員（阿宏）</li>
+                                <li>急診醫師與 Code Blue 急救團隊</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 參、教案起始狀態與核心推演檢核表 -->
+                <div class="lesson-section-box" style="background: #FFFFFF; border-color: #CBD5E1;">
+                    <div class="lesson-sec-title">
+                        <span>參、</span> 教案起始狀態與核心推演檢核表（點擊方框可即時打勾評核）
+                    </div>
+
+                    <div style="background: #EEF2FF; border-left: 5px solid #4F46E5; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;">
+                        <strong style="color: #312E81; font-size: 16.5px;">【教案起始狀態與題幹 (Starting States and Stem)】</strong>
+                        <p style="font-size: 16px; color: #1E1B4B; margin-top: 6px; line-height: 1.7;">
+                            急診病人由傳送人員推入一般 X 光攝影室，準備執行胸部 X 光攝影。病人肢體較為無力，傳送人員遞交單據後由放射師接手，需引導病人就位並執行常規攝影檢查。
+                        </p>
+                    </div>
+
+                    <!-- CRITICAL EVENT 1 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件一：</span> 接手病人與錯單防錯辨識
+                            </div>
+                            <span class="trap-badge" style="background: #FEE2E2; color: #991B1B;">三讀五對防錯</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>執行病人手圈三讀五對 ｜ 攔截錯誤檢查單 ｜ 落實防跌移床
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 核對手圈雙重身分：</strong>傳送人員推入病人並遞上檢查單，放射師核對手圈詢問：
+                                    <div class="dialogue-quote">
+                                        「先生您好，請問您的姓名與出生年月日？」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 及時發現並攔截錯單：</strong>比對檢查單時，敏銳發現檢查單姓名為「陳 OO」，手圈姓名為「王先生」，部位也不符，放射師立即喊停防錯：
+                                    <div class="dialogue-quote" style="border-left-color: #DC2626; color: #991B1B; background: #FEF2F2;">
+                                        「等一下，這張檢查單不是這位病人的，請暫停檢查！」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 移床落實防跌：</strong>移床前確實將輪椅雙側煞車鎖死，並雙手扶持病人以防跌倒。
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL EVENT 2 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件二：</span> 突發顯影劑急性過敏、意識喪失與啟動 Code Blue
+                            </div>
+                            <span class="trap-badge" style="background: #FEE2E2; color: #991B1B;">過敏休克 & Code Blue</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>辨識 CT 轉入之顯影劑嚴重過敏 ｜ 立即高濃度給氧與過敏急救準備 ｜ 10 秒內評估意識脈搏 ｜ 啟動 Code Blue 與跨室呼叫急救車／Epinephrine
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 敏銳辨識顯影劑急性過敏（自 CT 轉入）：</strong>移床定位時，病人突發呼吸急促、喉頭水腫喘鳴（Stridor）、全身大片蕁麻疹發癢與血壓急降，放射師敏銳連結病人「剛在 CT 室注射顯影劑」，立即判定為顯影劑延遲發作之急性過敏性休克（Anaphylactic Shock）：
+                                    <div class="dialogue-quote">
+                                        「先生！你是不是胸口很悶、喉嚨很緊喘不過氣？請放鬆深呼吸，這是剛打顯影劑的嚴重過敏，我立刻幫你給氧急救！」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 立即過敏急救處置（高流量給氧）：</strong>放射師迅速拉下氧氣面罩，給予高濃度高流量氧氣（NR-mask 10–15 L/min），保持呼吸道通暢，並準備通報醫師施打腎上腺素（Epinephrine 0.3–0.5 mg IM）。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 突發意識喪失與評估呼吸脈搏（&lt;10秒）：</strong>病患因嚴重過敏休克血壓驟降，隨即雙眼上吊、意識喪失、呼吸停止。放射師拍肩大喊：「先生！先生！你怎麼了？」，於 10 秒內同步確認頸動脈無搏動且無胸部起伏，確認為心跳驟停。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 啟動院內 Code Blue 廣播：</strong>毫不延遲立即按下檢查室急救鈕並對廣播系統高喊：
+                                    <div class="dialogue-quote" style="border-left-color: #DC2626; color: #991B1B; background: #FEF2F2;">
+                                        「X 光室 Code Blue！急救！急救！病人剛做完 CT 嚴重顯影劑過敏休克、意識喪失心跳驟停！」
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 跨室呼叫 CT 放射師攜帶急救車與 Epinephrine 支援：</strong>透過對講機或開門向隔壁 CT 室大喊呼救：
+                                    <div class="dialogue-quote">
+                                        「阿宏（CT 放射師），快過來支援！剛剛 CT 轉過來的病人嚴重顯影劑過敏休克、心跳停止了，幫我把急救車、AED 還有 Epinephrine 推過來！」
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL EVENT 3 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件三：</span> 高品質 CPR 與雙人協同
+                            </div>
+                            <span class="trap-badge" style="background: #DCFCE7; color: #166534;">高品質 CPR</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>立即展開胸外按壓 ｜ 確保按壓深度與頻率 ｜ 換人按壓中斷小於 10 秒
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 立即展開 CPR：</strong>確認無脈搏後，放射師毫不延遲立即跳上床開始胸外按壓。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 按壓品質達標：</strong>維持每分鐘 100–120 次、深度 5–6 公分，每次按壓胸壁充分回彈。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 換手按壓中斷 &lt; 10 秒：</strong>CT 放射師攜帶急救車衝入接手胸外按壓時，雙人交接換手之中斷時間嚴格小於 10 秒。
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL EVENT 4 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件四：</span> 去顫器電擊與 Clear 安全防護
+                            </div>
+                            <span class="trap-badge" style="background: #FEF3C7; color: #92400E;">電擊去顫 200J</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>正確貼附電極片 ｜ 判讀 VF 並充能 200J ｜ 高喊 Clear 確保全員安全
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 正確貼片與判讀充能：</strong>迅速將去顫貼片貼於胸骨右上方與心尖左下方，判讀監視器為心室顫動（VF），設定雙相波電擊能量 200J 並充能。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 落實安全防護大喊 Clear：</strong>電擊前環視四周並張開雙手高喊：
+                                    <div class="dialogue-quote" style="border-left-color: #EA580C; color: #9A3412; background: #FFF7ED;">
+                                        「我離開、你離開、大家都離開！（Clear!）」確認全員無人碰觸病床。
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 電擊後立刻恢復壓胸：</strong>按下電擊鈕完成去顫後，立即無縫接續胸外按壓（不浪費時間摸脈搏）。
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL EVENT 5 -->
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-title">
+                                <span>🚩 事件五：</span> 病人隱私維護與急救團隊交接
+                            </div>
+                            <span class="trap-badge" style="background: #E0E7FF; color: #3730A3;">全人尊嚴 & ISBAR</span>
+                        </div>
+                        <div class="event-objectives">
+                            <strong>🎯 學習目標：</strong>遮蔽病人身體維護隱私 ｜ 依 ISBAR 向急診團隊交接
+                        </div>
+                        <div class="checklist-group">
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 蓋妥被單維護隱私尊嚴：</strong>在急救移床或電擊完成後，放射師主動拉起被單覆蓋病人身體暴露處，維護隱私尊嚴與防寒保暖。
+                                </div>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" onchange="toggleCheck(this)">
+                                <div class="check-item-text">
+                                    <strong>[ ] 依 ISBAR 向急救小組交接：</strong>急救團隊趕抵現場時，放射師清楚回報：
+                                    <div class="dialogue-quote">
+                                        <strong>• S（現況）：</strong>「病人在 X 光室檢查時突發嚴重顯影劑過敏性休克合併致死性 VF 倒地。」<br>
+                                        <strong>• B（背景）：</strong>「急診轉入照 Chest X-ray，剛從隔壁 CT 室做完對比劑掃描。」<br>
+                                        <strong>• A（評估）：</strong>「移床時突發喉頭喘鳴過敏，隨即無意識脈搏。已給高濃度氧氣，執行高品質 CPR 2 個循環，並給予 200J 去顫電擊一次，急救車已備妥 Epinephrine 0.3mg。」<br>
+                                        <strong>• R（建議）：</strong>「目前已接續壓胸中，請急救團隊與醫師立即接手過敏與進階復甦處置。」
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 肆、模擬假人／演員演出設定指引 -->
+                <div class="lesson-section-box">
+                    <div class="lesson-sec-title">
+                        <span>肆、</span> 模擬假人／演員演出設定指引 (Actor & Simulator Guidelines)
+                    </div>
+
+                    <table class="actor-sim-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">誘發條件／時間點</th>
+                                <th style="width: 75%;">演員（SP）／假人之情境演出反應與台詞</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>病人進室期</strong></td>
+                                <td>傳送人員遞送病歷夾，內夾故意放錯之<span style="color: #DC2626; font-weight: 700;">「陳 OO 腹部 X 光檢查單」</span>（測試學員辨識手圈與三讀五對能力）。病人神情虛弱，自述剛從 CT 室做完檢查推過來。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>移床／顯影劑過敏急變期</strong></td>
+                                <td>假人演繹／演員發出喉頭喘鳴音（Stridor）、呼吸困難喘不過氣、抓頸部胸口：<span style="color: #DC2626; font-weight: 700;">「放射師……我好喘、喉嚨好緊……剛打完藥水全身好熱好癢……」</span>隨後控台設定：<span style="color: #DC2626; font-weight: 700;">突發雙眼閉合、血壓崩跌、呼吸停止、心電圖呈現致死性心室顫動（VF）、頸動脈搏動停止</span>。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>去顫電擊與給藥後</strong></td>
+                                <td>第一次 200J 電擊並接續高品質胸外按壓 2 分鐘（配合醫師評估給予 Epinephrine），控台將假人心律轉為<span style="color: #16A34A; font-weight: 700;">正常竇性心律（NSR），恢復頸動脈搏動（ROSC）</span>。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </article>
+
+    </section>
+
+
 
     <!-- TRM Tool Modal -->
     <div id="trm-modal" class="trm-modal-overlay" onclick="closeTrmModal(event)">
@@ -2223,35 +4036,78 @@
         }
 
         // Module Switcher Logic
-        let currentModule = 'traps';
+        let currentModule = 'briefing';
 
         function switchModule(moduleName) {
             currentModule = moduleName;
+            const btnBriefing = document.getElementById('btn-mod-briefing');
             const btnTraps = document.getElementById('btn-mod-traps');
             const btnHolistic = document.getElementById('btn-mod-holistic');
+            const btnLesson = document.getElementById('btn-mod-lesson');
+            
+            const subBriefing = document.getElementById('sub-filters-briefing');
             const subTraps = document.getElementById('sub-filters-traps');
             const subHolistic = document.getElementById('sub-filters-holistic');
+            const subLesson = document.getElementById('sub-filters-lesson');
+
+            const sectionBriefing = document.getElementById('section-briefing');
             const sectionTraps = document.getElementById('section-traps');
             const sectionHolistic = document.getElementById('section-holistic');
+            const sectionLesson = document.getElementById('section-lesson');
 
-            if (moduleName === 'traps') {
+            // Reset all
+            btnBriefing.classList.remove('active');
+            btnTraps.classList.remove('active');
+            btnHolistic.classList.remove('active');
+            if (btnLesson) btnLesson.classList.remove('active');
+
+            subBriefing.style.display = 'none';
+            subTraps.style.display = 'none';
+            subHolistic.style.display = 'none';
+            if (subLesson) subLesson.style.display = 'none';
+
+            sectionBriefing.style.display = 'none';
+            sectionTraps.style.display = 'none';
+            sectionHolistic.style.display = 'none';
+            if (sectionLesson) sectionLesson.style.display = 'none';
+
+            if (moduleName === 'briefing') {
+                btnBriefing.classList.add('active');
+                subBriefing.style.display = 'flex';
+                sectionBriefing.style.display = 'block';
+                document.getElementById('searchInput').placeholder = "搜尋考前說明（如：空間配置、CT 室、X 光室、留觀室、如何玩、標準病人、模擬假人...）";
+            } else if (moduleName === 'traps') {
                 btnTraps.classList.add('active');
-                btnHolistic.classList.remove('active');
                 subTraps.style.display = 'flex';
-                subHolistic.style.display = 'none';
                 sectionTraps.style.display = 'block';
-                sectionHolistic.style.display = 'none';
                 document.getElementById('searchInput').placeholder = "搜尋陷阱關鍵字（如：右心症、氣胸、骨折、假牙、主動脈、心電圖VF...）";
-            } else {
-                btnTraps.classList.remove('active');
+            } else if (moduleName === 'holistic') {
                 btnHolistic.classList.add('active');
-                subTraps.style.display = 'none';
                 subHolistic.style.display = 'flex';
-                sectionTraps.style.display = 'none';
                 sectionHolistic.style.display = 'block';
                 document.getElementById('searchInput').placeholder = "搜尋全人與TRM關鍵字（如：eGFR、失智、懷孕、DNR、MRI、骨折...）";
+            } else if (moduleName === 'lesson') {
+                if (btnLesson) btnLesson.classList.add('active');
+                if (subLesson) subLesson.style.display = 'flex';
+                if (sectionLesson) sectionLesson.style.display = 'block';
+                document.getElementById('searchInput').placeholder = "搜尋教案關鍵字（如：低血糖、D50W、ISBAR、錯單、心室顫動VF、CPR、去顫、防跌...）";
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterBriefing(category, btn) {
+            const buttons = document.querySelectorAll('#sub-filters-briefing .btn-filter');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const blocks = document.querySelectorAll('#section-briefing .briefing-block');
+            blocks.forEach(block => {
+                if (category === 'all' || block.dataset.category === category) {
+                    block.style.display = 'block';
+                } else {
+                    block.style.display = 'none';
+                }
+            });
         }
 
         function filterHolistic(category, btn) {
@@ -2271,13 +4127,57 @@
             });
         }
 
+        function filterLesson(category, btn) {
+            const buttons = document.querySelectorAll('#sub-filters-lesson .btn-filter');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('#section-lesson .lesson-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleCheck(input) {
+            const item = input.closest('.check-item');
+            if (input.checked) {
+                item.classList.add('checked');
+            } else {
+                item.classList.remove('checked');
+            }
+        }
+
         function searchAll() {
             const query = document.getElementById('searchInput').value.trim().toLowerCase();
             
-            if (currentModule === 'traps') {
+            if (currentModule === 'briefing') {
+                const blocks = document.querySelectorAll('#section-briefing .briefing-block');
+                blocks.forEach(block => {
+                    const text = block.innerText.toLowerCase() + " " + (block.dataset.keywords || "");
+                    if (text.includes(query)) {
+                        block.style.display = 'block';
+                    } else {
+                        block.style.display = 'none';
+                    }
+                });
+            } else if (currentModule === 'traps') {
                 searchTraps();
-            } else {
+            } else if (currentModule === 'holistic') {
                 const cards = document.querySelectorAll('#section-holistic .trap-card');
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase() + " " + (card.dataset.keywords || "");
+                    if (text.includes(query)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            } else if (currentModule === 'lesson') {
+                const cards = document.querySelectorAll('#section-lesson .lesson-card');
                 cards.forEach(card => {
                     const text = card.innerText.toLowerCase() + " " + (card.dataset.keywords || "");
                     if (text.includes(query)) {
