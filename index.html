@@ -1674,6 +1674,150 @@
             border-bottom: none;
         }
 
+
+        /* ===== A 級美化：導覽列統一樣式、手機橫滑、捲動收合 ===== */
+        .nav-sticky-wrap { padding: 12px 24px; transition: padding 0.2s ease, box-shadow 0.2s ease; }
+        .nav-inner { gap: 12px 16px; }
+
+        .module-switcher {
+            gap: 10px;
+            margin-bottom: 4px;
+            padding-bottom: 12px;
+        }
+
+        .module-switcher .btn-module,
+        .module-switcher .btn-module.btn-briefing,
+        .module-switcher .btn-module.btn-lesson {
+            --mod-accent: #0284C7;
+            --mod-tint: #E0F2FE;
+            position: relative;
+            flex: 1 1 0;
+            min-width: 0;
+            background: #FFFFFF;
+            color: var(--text-dark);
+            border: 1.5px solid var(--border-light);
+            border-radius: 12px;
+            padding: 10px 16px;
+            gap: 12px;
+            text-align: left;
+            box-shadow: none;
+            transform: none;
+        }
+        .module-switcher .btn-module.btn-briefing { --mod-accent: #4F46E5; --mod-tint: #EEF2FF; }
+        .module-switcher .btn-module.btn-holistic { --mod-accent: #0F9F6E; --mod-tint: #DCFCE7; }
+        .module-switcher .btn-module.btn-lesson   { --mod-accent: #C026D3; --mod-tint: #FAE8FF; }
+
+        .module-switcher .btn-module:hover {
+            background: #F8FAFC;
+            border-color: #CBD5E1;
+        }
+
+        .module-switcher .btn-module.active,
+        .module-switcher .btn-module.active.btn-briefing,
+        .module-switcher .btn-module.active.btn-holistic,
+        .module-switcher .btn-module.active.btn-lesson {
+            background: var(--primary-navy);
+            border-color: var(--primary-navy);
+            color: #FFFFFF;
+            box-shadow: 0 6px 16px rgba(15, 32, 53, 0.22);
+        }
+        .module-switcher .btn-module.active::after {
+            content: "";
+            position: absolute;
+            left: 14px; right: 14px; bottom: -1.5px;
+            height: 4px;
+            border-radius: 4px 4px 0 0;
+            background: var(--mod-accent);
+        }
+
+        .mod-icon {
+            flex: none;
+            width: 38px; height: 38px;
+            display: grid; place-items: center;
+            border-radius: 10px;
+            background: var(--mod-tint);
+            font-size: 20px;
+            line-height: 1;
+        }
+        .btn-module.active .mod-icon { background: rgba(255, 255, 255, 0.14); }
+
+        .mod-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.3; }
+        .mod-name {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 17px; font-weight: 800; white-space: nowrap;
+        }
+        .mod-count {
+            font-size: 12.5px; font-weight: 800;
+            padding: 1px 8px; border-radius: 999px;
+            background: var(--mod-tint); color: var(--mod-accent);
+        }
+        .btn-module.active .mod-count { background: var(--mod-accent); color: #FFFFFF; }
+        .mod-sub {
+            font-size: 13px; font-weight: 500; color: var(--text-muted);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            max-height: 20px; transition: max-height 0.2s ease, opacity 0.2s ease;
+        }
+        .btn-module.active .mod-sub { color: #CBD5E1; }
+
+        .filter-buttons { gap: 8px; }
+        .btn-filter {
+            background: #FFFFFF;
+            padding: 7px 16px;
+            border-radius: 999px;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        .search-input { padding-top: 9px; padding-bottom: 9px; font-size: 15.5px; border-radius: 999px; }
+
+        /* 捲動後收合：縮小間距、隱藏副標 */
+        .nav-sticky-wrap.nav-compact { padding-top: 8px; padding-bottom: 8px; box-shadow: 0 6px 16px rgba(15, 32, 53, 0.10); }
+        .nav-compact .module-switcher { padding-bottom: 8px; }
+        .nav-compact .btn-module { padding-top: 6px; padding-bottom: 6px; }
+        .nav-compact .mod-icon { width: 30px; height: 30px; font-size: 17px; }
+        .nav-compact .mod-sub { max-height: 0; opacity: 0; }
+
+        @media (max-width: 1024px) {
+            .search-box { min-width: 240px; flex: 1 1 240px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-sticky-wrap { padding: 10px 0; }
+            .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; }
+
+            /* 主分頁與篩選鈕：單排、左右滑動 */
+            .module-switcher,
+            .filter-buttons {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x proximity;
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
+                padding-left: 16px; padding-right: 16px;
+                scroll-padding: 0 16px;
+            }
+            .module-switcher::-webkit-scrollbar,
+            .filter-buttons::-webkit-scrollbar { display: none; }
+            .module-switcher { gap: 8px; padding-bottom: 8px; margin-bottom: 0; }
+
+            .module-switcher .btn-module,
+            .module-switcher .btn-module.btn-briefing,
+            .module-switcher .btn-module.btn-lesson {
+                flex: 0 0 auto;
+                padding: 7px 14px 7px 8px;
+                gap: 8px;
+                scroll-snap-align: start;
+            }
+            .mod-icon { width: 30px; height: 30px; font-size: 17px; border-radius: 8px; }
+            .mod-name { font-size: 15.5px; }
+            .mod-sub { display: none; }
+            .btn-filter { padding: 6px 14px; font-size: 14.5px; scroll-snap-align: start; }
+
+            .search-box { flex: none; min-width: 0; margin: 0 16px; }
+            .search-input { font-size: 16px; }
+
+            /* 手機捲動後：收起搜尋列，把畫面讓給內容 */
+            .nav-compact .search-box { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -1691,17 +1835,17 @@
     <nav class="nav-sticky-wrap">
         <div class="nav-inner">
             <div class="module-switcher">
-                <button id="btn-mod-briefing" class="btn-module btn-briefing active" onclick="switchModule('briefing')">
-                    📋 考前說明（場地空間與競賽流程）
+                <button id="btn-mod-briefing" class="btn-module btn-briefing active" onclick="switchModule('briefing')" title="考前說明（場地空間與競賽流程）">
+                    <span class="mod-icon">📋</span><span class="mod-text"><span class="mod-name">考前說明</span><span class="mod-sub">場地空間與競賽流程</span></span>
                 </button>
-                <button id="btn-mod-traps" class="btn-module" onclick="switchModule('traps')">
-                    🎯 臨床高階陷阱題 (14)
+                <button id="btn-mod-traps" class="btn-module btn-traps" onclick="switchModule('traps')" title="臨床高階陷阱題 (14)">
+                    <span class="mod-icon">🎯</span><span class="mod-text"><span class="mod-name">陷阱題<span class="mod-count">14</span></span><span class="mod-sub">臨床高階陷阱題</span></span>
                 </button>
-                <button id="btn-mod-holistic" class="btn-module btn-holistic" onclick="switchModule('holistic')">
-                    🌿 全人醫療與TRM 專區 (6大情境與心法)
+                <button id="btn-mod-holistic" class="btn-module btn-holistic" onclick="switchModule('holistic')" title="全人醫療與TRM 專區 (6大情境與心法)">
+                    <span class="mod-icon">🌿</span><span class="mod-text"><span class="mod-name">全人・TRM<span class="mod-count">6</span></span><span class="mod-sub">6 大情境與心法</span></span>
                 </button>
-                <button id="btn-mod-lesson" class="btn-module btn-lesson" onclick="switchModule('lesson')">
-                    📑 情境模擬教案 (2大實戰教案)
+                <button id="btn-mod-lesson" class="btn-module btn-lesson" onclick="switchModule('lesson')" title="情境模擬教案 (2大實戰教案)">
+                    <span class="mod-icon">📑</span><span class="mod-text"><span class="mod-name">情境教案<span class="mod-count">2</span></span><span class="mod-sub">2 大實戰教案</span></span>
                 </button>
             </div>
             <div id="sub-filters-briefing" class="filter-buttons">
@@ -4038,6 +4182,34 @@
         // Module Switcher Logic
         let currentModule = 'briefing';
 
+        // 導覽列捲動收合（進入/離開門檻不同，避免在臨界點抖動）
+        (function () {
+            const nav = document.querySelector('.nav-sticky-wrap');
+            if (!nav) return;
+            let compact = false;
+            function update() {
+                const header = document.querySelector('header');
+                const y = window.scrollY;
+                const headerEnd = header ? header.offsetTop + header.offsetHeight : 0;
+                if (document.activeElement && document.activeElement.id === 'searchInput') return;
+                if (!compact && y > headerEnd + 120) {
+                    compact = true; nav.classList.add('nav-compact');
+                } else if (compact && y < headerEnd + 20) {
+                    compact = false; nav.classList.remove('nav-compact');
+                }
+            }
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        })();
+
+        // 手機版：切換分頁時把選中的按鈕捲進可視範圍
+        function revealActiveTab(btn) {
+            if (!btn) return;
+            const bar = btn.parentElement;
+            if (bar.scrollWidth <= bar.clientWidth) return;
+            bar.scrollTo({ left: btn.offsetLeft - bar.offsetLeft - 16, behavior: 'smooth' });
+        }
+
         function switchModule(moduleName) {
             currentModule = moduleName;
             const btnBriefing = document.getElementById('btn-mod-briefing');
@@ -4092,6 +4264,7 @@
                 if (sectionLesson) sectionLesson.style.display = 'block';
                 document.getElementById('searchInput').placeholder = "搜尋教案關鍵字（如：低血糖、D50W、ISBAR、錯單、心室顫動VF、CPR、去顫、防跌...）";
             }
+            revealActiveTab(document.querySelector('.module-switcher .btn-module.active'));
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
